@@ -141,3 +141,71 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+.pagina-boti {
+  background-color: #f3f3f3;
+  color: #212529;
+  min-height: 100vh;
+}
+
+.pagina-boti h1,
+.pagina-boti h2 {
+  color: #212529;
+}
+
+.pagina-boti .card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pagina-boti .card-producto,
+.pagina-boti .card-blog {
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.pagina-boti .card-producto:hover,
+.pagina-boti .card-blog:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.pagina-boti .link-none {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.pagina-boti .link-none:hover {
+  color: #0d6efd;
+}
+
+.pagina-boti .precio-descuento {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.pagina-boti .precio-nuevo {
+  color: #ff9900;
+  font-size: 1.4rem;
+}
+
+.pagina-boti .card-img-top {
+  padding: 8px;
+}
+
+.pagina-boti .form-label {
+  font-weight: 500;
+}
+
+.pagina-boti p {
+  line-height: 1.6;
+}
