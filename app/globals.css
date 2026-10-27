@@ -209,3 +209,225 @@ body {
 .pagina-boti p {
   line-height: 1.6;
 }
+
+.ReporteProductos {
+    color: #212529;
+    padding-bottom: 30px;
+}
+ 
+.ReporteProductos h4 {
+    color: #212529;
+    font-size: 22px;
+}
+ 
+.ReporteProductos p {
+    color: #555;
+}
+ 
+.ReporteProductos .card {
+    height: 100%;
+    border-radius: 5px;
+}
+ 
+.ReporteProductos .card-body {
+    padding: 20px;
+}
+ 
+.ReporteProductos .card-body h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+ 
+.ReporteProductos canvas {
+    width: 100% !important;
+}
+ 
+.Dashboard,
+.Dashboard_Productos {
+    --admin-fondo: #0b0a09;
+    --admin-encabezado: #12110f;
+    --admin-sidebar: #11100e;
+    --admin-tarjeta: #191713;
+    --admin-tarjeta-hover: #25211b;
+    --admin-dorado: #ead38b;
+    --admin-dorado-claro: #f5df9b;
+    --admin-azul-petroleo: #173a45;
+    --admin-texto: #f7f7f7;
+    --admin-texto-secundario: #b9afa3;
+    --admin-borde: #b9a45f;
+ 
+    min-height: 100vh;
+    background-color: var(--admin-fondo);
+    color: var(--admin-texto);
+}
+ 
+.Dashboard main,
+.Dashboard_Productos main,
+.Dashboard .container-fluid,
+.Dashboard_Productos .container-fluid {
+    background-color: var(--admin-fondo) !important;
+    color: var(--admin-texto);
+}
+ 
+.Dashboard .navbar,
+.Dashboard_Productos .navbar,
+.Dashboard .bg-dark,
+.Dashboard_Productos .bg-dark {
+    background-color: var(--admin-encabezado) !important;
+    color: var(--admin-texto) !important;
+    border-bottom: 1px solid #393329;
+}
+ 
+.Dashboard aside.sidebar,
+.Dashboard_Productos aside.sidebar,
+.Dashboard #sidebarMenu,
+.Dashboard_Productos #sidebarMenu {
+    background-color: var(--admin-sidebar) !important;
+    color: var(--admin-texto);
+    border-color: #393329 !important;
+}
+ 
+.Dashboard #sidebarMenu,
+.Dashboard_Productos #sidebarMenu {
+    min-height: calc(100vh - 37px);
+}
+ 
+.Dashboard a.nav-link.nav-menu,
+.Dashboard_Productos a.nav-link.nav-menu {
+    color: var(--admin-texto-secundario) !important;
+}
+ 
+.Dashboard a.nav-link.nav-menu:hover,
+.Dashboard_Productos a.nav-link.nav-menu:hover {
+    background-color: var(--admin-tarjeta-hover);
+    color: var(--admin-dorado-claro) !important;
+    border-radius: 10px;
+}
+ 
+.Dashboard a.nav-link.nav-menu.nav-active,
+.Dashboard_Productos a.nav-link.nav-menu.nav-active {
+    background-color: var(--admin-azul-petroleo) !important;
+    color: var(--admin-dorado-claro) !important;
+    border-radius: 50rem;
+}
+ 
+.Dashboard .bi,
+.Dashboard_Productos .bi,
+.Dashboard .dashboard-icon,
+.Dashboard_Productos .dashboard-icon {
+    color: var(--admin-dorado);
+}
+ 
+.Dashboard .card,
+.Dashboard_Productos .card,
+.Dashboard .dashboard-card,
+.Dashboard_Productos .dashboard-card {
+    background-color: var(--admin-tarjeta) !important;
+    color: var(--admin-texto) !important;
+    border: 1px solid var(--admin-borde) !important;
+    border-radius: 8px;
+}
+ 
+.Dashboard .card:hover,
+.Dashboard_Productos .card:hover {
+    background-color: var(--admin-tarjeta-hover) !important;
+}
+ 
+.Dashboard h1,
+.Dashboard h2,
+.Dashboard h3,
+.Dashboard h4,
+.Dashboard h5,
+.Dashboard_Productos h1,
+.Dashboard_Productos h2,
+.Dashboard_Productos h3,
+.Dashboard_Productos h4,
+.Dashboard_Productos h5,
+.Dashboard .card-title,
+.Dashboard_Productos .card-title {
+    color: var(--admin-dorado-claro);
+}
+ 
+.Dashboard .text-muted,
+.Dashboard_Productos .text-muted {
+    color: var(--admin-texto-secundario) !important;
+}
+ 
+.Dashboard .table,
+.Dashboard_Productos .table {
+    --bs-table-color: var(--admin-texto);
+    --bs-table-bg: var(--admin-tarjeta);
+    --bs-table-border-color: #4a4336;
+    --bs-table-striped-color: var(--admin-texto);
+    --bs-table-striped-bg: #211e19;
+    --bs-table-hover-color: var(--admin-texto);
+    --bs-table-hover-bg: var(--admin-tarjeta-hover);
+    color: var(--admin-texto);
+    border-color: #4a4336;
+}
+ 
+.Dashboard .table thead th,
+.Dashboard_Productos .table thead th {
+    color: var(--admin-dorado-claro);
+    border-bottom-color: var(--admin-borde);
+}
+ 
+.Dashboard .btn-primary,
+.Dashboard_Productos .btn-primary {
+    background-color: var(--admin-dorado);
+    border-color: var(--admin-dorado);
+    color: #11100e;
+    font-weight: 600;
+}
+ 
+.Dashboard .btn-primary:hover,
+.Dashboard_Productos .btn-primary:hover {
+    background-color: var(--admin-dorado-claro);
+    border-color: var(--admin-dorado-claro);
+    color: #11100e;
+}
+ 
+.Dashboard .form-control,
+.Dashboard .form-select,
+.Dashboard_Productos .form-control,
+.Dashboard_Productos .form-select {
+    background-color: #12110f !important;
+    color: #ffffff !important;
+    border: 1px solid #746744 !important;
+}
+ 
+.Dashboard .form-control:focus,
+.Dashboard .form-select:focus,
+.Dashboard_Productos .form-control:focus,
+.Dashboard_Productos .form-select:focus {
+    border-color: var(--admin-dorado) !important;
+    box-shadow: 0 0 0 0.2rem rgba(234, 211, 139, 0.2);
+}
+ 
+.Dashboard .form-label,
+.Dashboard_Productos .form-label {
+    color: var(--admin-texto) !important;
+}
+ 
+.Dashboard .nav-tabs,
+.Dashboard_Productos .nav-tabs {
+    border-bottom: 1px solid var(--admin-borde);
+}
+ 
+.Dashboard .nav-tabs .nav-link,
+.Dashboard_Productos .nav-tabs .nav-link {
+    color: var(--admin-texto-secundario);
+}
+ 
+.Dashboard .nav-tabs .nav-link.active,
+.Dashboard_Productos .nav-tabs .nav-link.active {
+    background-color: var(--admin-tarjeta);
+    color: var(--admin-dorado-claro);
+    border-color: var(--admin-borde);
+    border-bottom-color: var(--admin-tarjeta);
+}
+ 
+.Dashboard .nav-tabs .nav-link:hover,
+.Dashboard_Productos .nav-tabs .nav-link:hover {
+    color: var(--admin-dorado-claro);
+}
