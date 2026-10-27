@@ -67,7 +67,6 @@ export default function ReporteProductos() {
             "rgba(153, 102, 255, 0.6)"
         ];
 
-        // 1. Gráfico de barras
         if (graficoBarras.current) {
             graficos.push(new Chart(graficoBarras.current, {
                 type: "bar",

@@ -90,7 +90,7 @@ function DetalleBoleta() {
                                         </li>
 
                                         <li className="nav-item mx-2">
-                                            <a href="/dashboard_productos" className="nav-link nav-menu d-flex gap-2">
+                                            <a href="/admin/productos-criticos" className="nav-link nav-menu d-flex gap-2">
                                                 <i className="bi bi-cart"></i>
                                                 Productos
                                             </a>
@@ -104,7 +104,7 @@ function DetalleBoleta() {
                                         </li>
 
                                         <li className="nav-item mx-2">
-                                            <a href="/dashboard_usuarios" className="nav-link nav-menu d-flex gap-2">
+                                            <a href="/admin/usuarios/historial" className="nav-link nav-menu d-flex gap-2">
                                                 <i className="bi bi-people"></i>
                                                 Usuarios
                                             </a>
