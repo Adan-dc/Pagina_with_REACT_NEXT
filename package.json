@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --import=tsx ./node_modules/jasmine/bin/jasmine.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
@@ -17,12 +18,15 @@
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
+    "@types/jasmine": "^7.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.3",
+    "jasmine": "^7.0.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

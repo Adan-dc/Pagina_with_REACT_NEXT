@@ -142,13 +142,12 @@ export default function Dashboard_Listado_Usuarios() {
                 <div className="mt-4">
                     <h4 className="card-title">Usuarios</h4>
                     <p className="card-text">Listado de usuarios</p>
-                    <h2>Section title</h2>
                     <ul className="nav nav-tabs">
                         <li className="nav-item">
-                            <a className="nav-link nav-menu" aria-current="page" href="/dashboard_usuarios">Listado de usuarios</a>
+                            <a className="nav-link nav-menu" aria-current="page" href="/dashboard_usuarios">Listado de trabajadores</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link nav-menu active" href="/dashboard_usuarios/listado_usuarios">Listado personajes</a>
+                            <a className="nav-link nav-menu active" href="/dashboard_usuarios/listado_usuarios">Listado de usuarios</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link nav-menu" href="/dashboard_usuarios/nuevo">Nuevo usuario</a>

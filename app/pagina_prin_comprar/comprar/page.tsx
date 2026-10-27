@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { calcularTotal, obtenerRutaPago } from "@/utils/funcionesTienda";
+
 import {
   useEffect,
   useState,
@@ -49,33 +51,29 @@ export default function Comprar() {
         setCargando(false);
     }, []);
 
-    const totalCompra = carrito.reduce(
-        (total, producto) =>
-        total + producto.precio * producto.cantidad,
-        0
-    );
+    const totalCompra = calcularTotal(carrito);
 
     function handlePagar(
         evento: FormEvent<HTMLFormElement>
     ) {
         evento.preventDefault();
 
+        const rutaPago = obtenerRutaPago(totalCompra);
+
         if (totalCompra > 0) {
         const compraRealizada = {
             productos: carrito,
             total: totalCompra,
-            fecha: new Date().toISOString()
+            fecha: new Date().toISOString(),
         };
 
         localStorage.setItem(
             "ultimaCompra",
             JSON.stringify(compraRealizada)
         );
-
-        router.push("/pagina_prin_comprar/correcto");
-        } else {
-        router.push("/pagina_prin_comprar/error");
         }
+
+        router.push(rutaPago);
     }
 
     return (
@@ -228,7 +226,7 @@ export default function Comprar() {
                                             <h4 className="card-title">Carrito de compra</h4>
                                             <p className="card-text">Completa la siguiente información</p>
                                         </div>
-                                        <Link href="/comprar" className="btn btn-primary py-3">Total a pagar: <strong>{formatearPrecio(totalCompra)}</strong></Link>
+                                        <div className="btn btn-primary py-3">Total a pagar:{" "}<strong>{formatearPrecio(totalCompra)}</strong></div>
                                     </div>
                                     <div className="table-responsive mt-3">
                                         <table className="table table-hover table-sm">

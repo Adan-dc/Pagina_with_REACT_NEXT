@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { filtrarProductosPorCategoria } from "@/utils/funcionesTienda";
 
 interface Producto {
     id: string;
@@ -30,6 +31,7 @@ export default function Dashboard_Productos() {
         const [productos, setProductos] = useState<Producto[]>([]);
         const [cargando, setCargando] = useState(true);
         const [error, setError] = useState("");
+        const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("TODAS");
       
         useEffect(() => {
           async function cargarProductos() {
@@ -57,6 +59,18 @@ export default function Dashboard_Productos() {
       
           cargarProductos();
         }, []);
+
+        const categoriasDisponibles = Array.from(
+            new Set(
+              productos.map((producto) => producto.categoria)
+            )
+          ).sort();
+
+        const productosFiltrados =
+            filtrarProductosPorCategoria(
+                productos,
+                categoriaSeleccionada
+            );
 
     return (
       <div className="Dashboard">
@@ -165,6 +179,36 @@ export default function Dashboard_Productos() {
                             <a className="nav-link nav-menu" aria-current="page" href="/dashboard_productos/editar">Editar Producto</a>
                         </li>
                     </ul>
+                    <div className="row mt-3 mb-3">
+                        <div className="col-md-4">
+                            <label
+                            htmlFor="filtroCategoria"
+                            className="form-label"
+                            >
+                            Filtrar productos por categoría
+                            </label>
+
+                            <select
+                            id="filtroCategoria"
+                            className="form-select"
+                            value={categoriaSeleccionada}
+                            onChange={(evento) =>
+                                setCategoriaSeleccionada(evento.target.value)
+                            }
+                            >
+                            <option value="TODAS">
+                                Todas las categorías
+                            </option>
+
+                            {categoriasDisponibles.map((categoria) => (
+                                <option key={categoria} value={categoria}>
+                                {categoria.charAt(0).toUpperCase() +
+                                    categoria.slice(1)}
+                                </option>
+                            ))}
+                            </select>
+                        </div>
+                    </div>
                     <div className="card text-start">
                         <div className="card-body">
                             <div className="table-responsive small">
@@ -196,17 +240,17 @@ export default function Dashboard_Productos() {
                                                 {error}
                                             </td>
                                             </tr>
-                                        ) : productos.length === 0 ? (
+                                        ) : productosFiltrados.length === 0 ? (
                                             <tr>
                                             <td
                                                 colSpan={7}
                                                 className="text-center text-secondary py-4"
                                             >
-                                                No existen productos registrados
+                                                No existen productos para la categoría seleccionada
                                             </td>
                                             </tr>
                                         ) : (
-                                            productos.map((producto, posicion) => (
+                                            productosFiltrados.map((producto, posicion) => (
                                             <tr key={producto.id}>
                                                 <th scope="row">
                                                 {posicion + 1}

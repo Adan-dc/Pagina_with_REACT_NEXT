@@ -49,7 +49,7 @@ export default function Dashboard_Categoria_Nueva() {
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/usuario/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/dashboard_usuarios">
                                       <i className="bi bi-people"></i>
                                       Usuarios
                                   </a>

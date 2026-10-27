@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { calcularTotal, ItemCarrito } from "@/utils/funcionesTienda";
 
 function formatearPrecio(precio: number) {
     return precio.toLocaleString("es-CL", {
@@ -18,14 +19,17 @@ export default function Pago_Correcto() {
 
         if (compraGuardada) {
         try {
-            const compra = JSON.parse(compraGuardada);
-
-            setTotalPagado(Number(compra.total) || 0);
+            const compra = JSON.parse(compraGuardada) as {
+                productos?: ItemCarrito[];
+              };
+              
+              const productosComprados = compra.productos ?? [];
+              const totalCalculado = calcularTotal(productosComprados);
+              
+              setTotalPagado(totalCalculado);
         } catch (error) {
-            console.error(
-            "No fue posible recuperar la compra",
-            error
-            );
+            console.error("No fue posible recuperar la compra",error);
+            setTotalPagado(0);
         }
         }
     }, []);

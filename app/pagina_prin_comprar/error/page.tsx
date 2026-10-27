@@ -1,8 +1,39 @@
 "use client";
 
 import Link from "next/link";
+import { calcularTotal, ItemCarrito } from "@/utils/funcionesTienda";
+import { useEffect, useState } from "react";
+
+function formatearPrecio(precio: number) {
+    return precio.toLocaleString("es-CL", {
+      style: "currency",
+      currency: "CLP",
+      maximumFractionDigits: 0,
+    });
+  }
 
 export default function Pago_Error() {
+    const [totalCompra, setTotalCompra] = useState(0);
+
+    useEffect(() => {
+      const carritoGuardado = localStorage.getItem("carrito");
+  
+      if (!carritoGuardado) {
+        setTotalCompra(0);
+        return;
+      }
+  
+      try {
+        const carrito = JSON.parse(carritoGuardado) as ItemCarrito[];
+        const totalCalculado = calcularTotal(carrito);
+  
+        setTotalCompra(totalCalculado);
+      } catch (error) {
+        console.error("No se pudo obtener el carrito:", error);
+        setTotalCompra(0);
+      }
+    }, []);
+
     return (
       <main>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -244,7 +275,7 @@ export default function Pago_Error() {
                                     <div className="text-center mb-3">
                                         <div className="card bg-white">
                                             <div className="card-body">
-                                                <h4>Total pagado: $ <span id="totalCompra"><strong>0</strong></span></h4>
+                                                <h4>Total pagado:{" "}<strong>{formatearPrecio(totalCompra)}</strong></h4>
                                             </div>
                                         </div>
                                     </div>

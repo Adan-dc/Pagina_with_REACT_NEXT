@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { calcularTotal } from "@/utils/funcionesTienda";
 
 interface Producto {
     id: string;
@@ -155,11 +156,7 @@ export default function Carrito() {
           guardarCarrito([]);
         }
       
-        const totalCarrito = carrito.reduce(
-          (total, producto) =>
-            total + producto.precio * producto.cantidad,
-          0
-        );
+        const totalCarrito = calcularTotal(carrito);
       
     return (
       <main>
@@ -218,7 +215,7 @@ export default function Carrito() {
 
                         <li className="nav-item">
                             <a className="btn btn-success ms-5" href="/carrito.html"><strong><i className="bi bi-cart4"></i> Carrito
-                                    <span className="">$<strong><span>{formatearPrecio(totalCarrito)}</span></strong></span>
+                                    <strong><span>{formatearPrecio(totalCarrito)}</span></strong>
                                 </strong></a>
                         </li>
                     </ul>

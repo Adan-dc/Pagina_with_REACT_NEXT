@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { filtrarUsuariosPorTipo } from "@/utils/funcionesTienda";
 
 interface Usuario {
     id: string;
@@ -18,13 +19,12 @@ export default function Dashboard_Usuario() {
     const [trabajadores, setTrabajadores] = useState<Usuario[]>([]);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState("");
+    const [rolSeleccionado, setRolSeleccionado] = useState("TODOS");
     
     useEffect(() => {
       async function cargarTrabajadores() {
         try {
-          const respuesta = await fetch(
-            `${API_URL}/usuarios?tipo=TRABAJADOR`
-          );
+          const respuesta = await fetch(`${API_URL}/usuarios`);
     
           if (!respuesta.ok) {
             throw new Error(
@@ -33,8 +33,13 @@ export default function Dashboard_Usuario() {
           }
     
           const datos: Usuario[] = await respuesta.json();
-    
-          setTrabajadores(datos);
+
+          const soloTrabajadores = filtrarUsuariosPorTipo(
+            datos,
+            "TODOS"
+          );
+          
+          setTrabajadores(soloTrabajadores);
         } catch (error) {
           console.error(error);
           setError("No fue posible conectarse con la API");
@@ -45,6 +50,12 @@ export default function Dashboard_Usuario() {
     
       cargarTrabajadores();
     }, []);
+
+    const trabajadoresFiltrados = filtrarUsuariosPorTipo(
+        trabajadores,
+        rolSeleccionado
+      );
+
 
     return (
       <div className="Dashboard">
@@ -157,6 +168,37 @@ export default function Dashboard_Usuario() {
                             <a className="nav-link nav-menu" href="/dashboard_usuarios/nuevo_admin">Nuevo usuario ADMIN</a>
                         </li>
                     </ul>
+                    <div className="row mt-3 mb-3">
+                        <div className="col-md-4">
+                            <label
+                            htmlFor="filtroTrabajadores"
+                            className="form-label"
+                            >
+                            Filtrar por tipo de trabajador
+                            </label>
+
+                            <select
+                            id="filtroTrabajadores"
+                            className="form-select"
+                            value={rolSeleccionado}
+                            onChange={(evento) =>
+                                setRolSeleccionado(evento.target.value)
+                            }
+                            >
+                            <option value="TODOS">
+                                Todos los trabajadores
+                            </option>
+
+                            <option value="ADMINISTRADOR">
+                                Administradores
+                            </option>
+
+                            <option value="VENDEDOR">
+                                Vendedores
+                            </option>
+                            </select>
+                        </div>
+                    </div>
                     <div className="card text-start">
                         <div className="card-body">
                             <div className="table-responsive small">
@@ -186,7 +228,7 @@ export default function Dashboard_Usuario() {
                                                 {error}
                                             </td>
                                             </tr>
-                                        ) : trabajadores.length === 0 ? (
+                                        ) : trabajadoresFiltrados.length === 0 ? (
                                             <tr>
                                             <td
                                                 colSpan={5}
@@ -196,7 +238,7 @@ export default function Dashboard_Usuario() {
                                             </td>
                                             </tr>
                                         ) : (
-                                            trabajadores.map((trabajador, posicion) => (
+                                            trabajadoresFiltrados.map((trabajador, posicion) => (
                                             <tr key={trabajador.id}>
                                                 <th>{posicion + 1}</th>
 
