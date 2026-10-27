@@ -1,0 +1,972 @@
+{
+    "categorias": [
+      {
+        "id": "1",
+        "nombre": "Ron"
+      },
+      {
+        "id": "2",
+        "nombre": "Bebida"
+      },
+      {
+        "id": "3",
+        "nombre": "Whisky"
+      }
+    ],
+    "usuarios": [
+    {
+        "id": "1",
+        "nombreCompleto": "Luna González",
+        "correo": "luna.gonzalez@example.com",
+        "telefono": "+56 9 1111 1001",
+        "tipo": "TRABAJADOR",
+        "rol": "ADMINISTRADOR"
+    },
+    {
+        "id": "2",
+        "nombreCompleto": "Pedro Ramírez",
+        "correo": "pedro.ramirez@example.com",
+        "telefono": "+56 9 1111 1002",
+        "tipo": "TRABAJADOR",
+        "rol": "VENDEDOR"
+    },
+    {
+        "id": "3",
+        "nombreCompleto": "Camila Soto",
+        "correo": "camila.soto@example.com",
+        "telefono": "+56 9 1111 1003",
+        "tipo": "TRABAJADOR",
+        "rol": "VENDEDOR"
+    },
+    {
+        "id": "4",
+        "nombreCompleto": "Diego Morales",
+        "correo": "diego.morales@example.com",
+        "telefono": "+56 9 1111 1004",
+        "tipo": "TRABAJADOR",
+        "rol": "VENDEDOR"
+    },
+    {
+        "id": "5",
+        "nombreCompleto": "Valentina Rojas",
+        "correo": "valentina.rojas@example.com",
+        "telefono": "+56 9 1111 1005",
+        "tipo": "TRABAJADOR",
+        "rol": "ADMINISTRADOR"
+    },
+    {
+        "id": "6",
+        "nombreCompleto": "Sebastián Muñoz",
+        "correo": "sebastian.munoz@example.com",
+        "telefono": "+56 9 1111 1006",
+        "tipo": "TRABAJADOR",
+        "rol": "VENDEDOR"
+    },
+    {
+        "id": "7",
+        "nombreCompleto": "Fernanda Silva",
+        "correo": "fernanda.silva@example.com",
+        "telefono": "+56 9 1111 1007",
+        "tipo": "TRABAJADOR",
+        "rol": "VENDEDOR"
+    },
+    {
+        "id": "8",
+        "nombreCompleto": "Matías Contreras",
+        "correo": "matias.contreras@example.com",
+        "telefono": "+56 9 1111 1008",
+        "tipo": "TRABAJADOR",
+        "rol": "VENDEDOR"
+    },
+    {
+        "id": "9",
+        "nombreCompleto": "Daniela Pérez",
+        "correo": "daniela.perez@example.com",
+        "telefono": "+56 9 1111 1009",
+        "tipo": "TRABAJADOR",
+        "rol": "VENDEDOR"
+    },
+    {
+        "id": "10",
+        "nombreCompleto": "Nicolás Herrera",
+        "correo": "nicolas.herrera@example.com",
+        "telefono": "+56 9 1111 1010",
+        "tipo": "TRABAJADOR",
+        "rol": "VENDEDOR"
+    },
+    {
+        "id": "11",
+        "nombreCompleto": "Andrea González",
+        "correo": "andrea.gonzalez@example.com",
+        "telefono": "+56 9 2222 2001",
+        "tipo": "CLIENTE",
+        "rol": "CLIENTE"
+    },
+    {
+        "id": "12",
+        "nombreCompleto": "Javier Torres",
+        "correo": "javier.torres@example.com",
+        "telefono": "+56 9 2222 2002",
+        "tipo": "CLIENTE",
+        "rol": "CLIENTE"
+    },
+    {
+        "id": "13",
+        "nombreCompleto": "Francisca López",
+        "correo": "francisca.lopez@example.com",
+        "telefono": "+56 9 2222 2003",
+        "tipo": "CLIENTE",
+        "rol": "CLIENTE"
+    },
+    {
+        "id": "14",
+        "nombreCompleto": "Tomás Martínez",
+        "correo": "tomas.martinez@example.com",
+        "telefono": "+56 9 2222 2004",
+        "tipo": "CLIENTE",
+        "rol": "CLIENTE"
+    },
+    {
+        "id": "15",
+        "nombreCompleto": "Catalina Reyes",
+        "correo": "catalina.reyes@example.com",
+        "telefono": "+56 9 2222 2005",
+        "tipo": "CLIENTE",
+        "rol": "CLIENTE"
+    },
+    {
+        "id": "16",
+        "nombreCompleto": "Benjamín Castro",
+        "correo": "benjamin.castro@example.com",
+        "telefono": "+56 9 2222 2006",
+        "tipo": "CLIENTE",
+        "rol": "CLIENTE"
+    },
+    {
+        "id": "17",
+        "nombreCompleto": "Antonia Fuentes",
+        "correo": "antonia.fuentes@example.com",
+        "telefono": "+56 9 2222 2007",
+        "tipo": "CLIENTE",
+        "rol": "CLIENTE"
+    },
+    {
+        "id": "18",
+        "nombreCompleto": "Felipe Navarro",
+        "correo": "felipe.navarro@example.com",
+        "telefono": "+56 9 2222 2008",
+        "tipo": "CLIENTE",
+        "rol": "CLIENTE"
+    },
+    {
+        "id": "19",
+        "nombreCompleto": "Josefa Espinoza",
+        "correo": "josefa.espinoza@example.com",
+        "telefono": "+56 9 2222 2009",
+        "tipo": "CLIENTE",
+        "rol": "CLIENTE"
+    },
+    {
+        "id": "20",
+        "nombreCompleto": "Vicente Salazar",
+        "correo": "vicente.salazar@example.com",
+        "telefono": "+56 9 2222 2010",
+        "tipo": "CLIENTE",
+        "rol": "CLIENTE"
+    }
+    ],
+    "productos": [
+        {
+        "id": "1",
+        "nombre": "six pack cerveza escudo silver lata 473 cc",
+        "categoria": "cerveza",
+        "precio": 4500,
+        "imagen": "/imagenesbotilleria/cervezas/six-pack-cerveza-escudo-silver-lata-473-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "2",
+        "nombre": "six pack cerveza escudo lata 473 cc",
+        "categoria": "cerveza",
+        "precio": 4500,
+        "imagen": "/imagenesbotilleria/cervezas/six-pack-cerveza-escudo-lata-473-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "3",
+        "nombre": "six pack cerveza cristal lata 473 cc",
+        "categoria": "cerveza",
+        "precio": 4500,
+        "imagen": "/imagenesbotilleria/cervezas/six-pack-cerveza-cristal-lata-473-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "4",
+        "nombre": "six pack cerveza becker lata 473 cc",
+        "categoria": "cerveza",
+        "precio": 4500,
+        "imagen": "/imagenesbotilleria/cervezas/six-pack-cerveza-becker-lata-473-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "5",
+        "nombre": "six pack cerveza royal lata 473cc",
+        "categoria": "cerveza",
+        "precio": 5000,
+        "imagen": "/imagenesbotilleria/cervezas/six-pack-cerveza-royal-lata-473cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "6",
+        "nombre": "six pack cerveza heineken lata 473 cc",
+        "categoria": "cerveza",
+        "precio": 7000,
+        "imagen": "/imagenesbotilleria/cervezas/six-pack-cerveza-heineken-lata-473-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "7",
+        "nombre": "six pack cerveza miller 355 cc",
+        "categoria": "cerveza",
+        "precio": 7000,
+        "imagen": "/imagenesbotilleria/cervezas/six-pack-cerveza-miller-355-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "8",
+        "nombre": "six pack cerveza corona 355 cc",
+        "categoria": "cerveza",
+        "precio": 7000,
+        "imagen": "/imagenesbotilleria/cervezas/six-pack-cerveza-corona-355-cc.jpg",
+        "stock": 3
+        },
+        {
+        "id": "9",
+        "nombre": "cerveza corona 710 cc",
+        "categoria": "cerveza",
+        "precio": 1900,
+        "imagen": "/imagenesbotilleria/cervezas/cerveza-corona-710-cc.jpg",
+        "stock": 3
+        },
+        {
+        "id": "10",
+        "nombre": "cerveza miller 650 cc",
+        "categoria": "cerveza",
+        "precio": 2700,
+        "imagen": "/imagenesbotilleria/cervezas/cerveza-miller-650-cc.jpg",
+        "stock": 3
+        },
+        {
+        "id": "11",
+        "nombre": "cerveza kunstmann torobayo 500 cc",
+        "categoria": "cerveza",
+        "precio": 2000,
+        "imagen": "/imagenesbotilleria/cervezas/cerveza-kunstmann-torobayo-500-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "12",
+        "nombre": "lemon stones lata 350 cc",
+        "categoria": "cerveza",
+        "precio": 1100,
+        "imagen": "/imagenesbotilleria/cervezas/lemon-stones-lata-350-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "13",
+        "nombre": "lemon stones maracuya lata 350 cc",
+        "categoria": "cerveza",
+        "precio": 1100,
+        "imagen": "/imagenesbotilleria/cervezas/lemon-stones-maracuya-lata-350-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "14",
+        "nombre": "cerveza stella artois 660 cc",
+        "categoria": "cerveza",
+        "precio": 1200,
+        "imagen": "/imagenesbotilleria/cervezas/cerveza-stella-artois-660-cc.jpg",
+        "stock": 3
+        },
+        {
+        "id": "15",
+        "nombre": "cerveza volcanes del sur 1 lt chocolate / naranja",
+        "categoria": "cerveza",
+        "precio": 2000,
+        "imagen": "/imagenesbotilleria/cervezas/cerveza-volcanes-del-sur-1-lt-chocolate-y-naranja.png",
+        "stock": 3
+        },
+        {
+        "id": "16",
+        "nombre": "cerveza volcanes del sur 1 lt lucuma",
+        "categoria": "cerveza",
+        "precio": 1500,
+        "imagen": "/imagenesbotilleria/cervezas/cerveza-volcanes-del-sur-1-lt-lucuma.jpg",
+        "stock": 3
+        },
+        {
+        "id": "17",
+        "nombre": "cerveza volcanes del sur 1 lt doppelbock",
+        "categoria": "cerveza",
+        "precio": 1900,
+        "imagen": "/imagenesbotilleria/cervezas/cerveza-volcanes-del-sur-1-lt-doppelbock.png",
+        "stock": 3
+        },
+        {
+        "id": "18",
+        "nombre": "cerveza budweiser laton 740 cc",
+        "categoria": "cerveza",
+        "precio": 1200,
+        "imagen": "/imagenesbotilleria/cervezas/cerveza-budweiser-laton-740-cc.png",
+        "stock": 3
+        },
+        {
+        "id": "19",
+        "nombre": "ron barcelo anejo 750cc",
+        "categoria": "ron",
+        "precio": 11000,
+        "imagen": "/imagenesbotilleria/ron/ron-barcelo-anejo.jpeg",
+        "stock": 3
+        },
+        {
+        "id": "20",
+        "nombre": "ron cabo viejo 750 ml",
+        "categoria": "ron",
+        "precio": 4500,
+        "imagen": "/imagenesbotilleria/ron/ron-cabo-viejo.jpg",
+        "stock": 3
+        },
+        {
+        "id": "21",
+        "nombre": "ron havana club especial 750 cc",
+        "categoria": "ron",
+        "precio": 7000,
+        "imagen": "/imagenesbotilleria/ron/RON-HAVANA-CLUB-ANEJO-ESPECIAL-750-CC-300x300-1.jpg",
+        "stock": 3
+        },
+        {
+        "id": "22",
+        "nombre": "petacon ron barcelo 375 cc",
+        "categoria": "ron",
+        "precio": 3300,
+        "imagen": "/imagenesbotilleria/ron/petacon-ron.webp",
+        "stock": 3
+        },
+        {
+        "id": "23",
+        "nombre": "ron bacardi cata oro 750 cc",
+        "categoria": "ron",
+        "precio": 10000,
+        "imagen": "/imagenesbotilleria/ron/ron-bacardi-cata-oro.jpg",
+        "stock": 3
+        },
+        {
+        "id": "24",
+        "nombre": "ron bacardi carta blanca 1 lt",
+        "categoria": "ron",
+        "precio": 10000,
+        "imagen": "/imagenesbotilleria/ron/ron-bacardi-carta-blanca.webp",
+        "stock": 3
+        },
+        {
+        "id": "25",
+        "nombre": "spirit blue berry ",
+        "categoria": "vodka",
+        "precio": 2000,
+        "imagen": "/imagenesbotilleria/vodka/RTD_SPIRIT_BLUEBERRY.webp",
+        "stock": 3
+        },
+        {
+        "id": "26",
+        "nombre": "spirit pina",
+        "categoria": "vodka",
+        "precio": 2000,
+        "imagen": "/imagenesbotilleria/vodka/spriti-pina.webp",
+        "stock": 3
+        },
+        {
+        "id": "27",
+        "nombre": "spirit limon",
+        "categoria": "vodka",
+        "precio": 2000,
+        "imagen": "/imagenesbotilleria/vodka/spirit-limon.png",
+        "stock": 3
+        },
+        {
+        "id": "28",
+        "nombre": "vodka eristoff black 700 cc",
+        "categoria": "vodka",
+        "precio": 7000,
+        "imagen": "/imagenesbotilleria/vodka/eristoff-black.webp",
+        "stock": 3
+        },
+        {
+        "id": "29",
+        "nombre": "vodka eristoff 700 cc",
+        "categoria": "vodka",
+        "precio": 5000,
+        "imagen": "/imagenesbotilleria/vodka/eristoff.webp",
+        "stock": 3
+        },
+        {
+        "id": "30",
+        "nombre": "bebida cocacola 3 litros desechable",
+        "categoria": "bebidas",
+        "precio": 2500,
+        "imagen": "/imagenesbotilleria/bebidas/cocacola3lt.webp",
+        "stock": 3
+        },
+        {
+        "id": "31",
+        "nombre": "bebida fanta 3 litros desechable",
+        "categoria": "bebidas",
+        "precio": 2500,
+        "imagen": "/imagenesbotilleria/bebidas/fanta-3lt.jpg",
+        "stock": 3
+        },
+        {
+        "id": "32",
+        "nombre": "bebida sprite 3 litros desechable",
+        "categoria": "bebidas",
+        "precio": 2500,
+        "imagen": "/imagenesbotilleria/bebidas/sprite.png",
+        "stock": 3
+        },
+        {
+        "id": "33",
+        "nombre": "monster energy 473 cc",
+        "categoria": "bebidas",
+        "precio": 2500,
+        "imagen": "/imagenesbotilleria/bebidas/monster.png",
+        "stock": 3
+        },
+        {
+        "id": "34",
+        "nombre": "jugo nectar watts 1.5 lt pina",
+        "categoria": "bebidas",
+        "precio": 1900,
+        "imagen": "/imagenesbotilleria/bebidas/watts-pina.png",
+        "stock": 3
+        },
+        {
+        "id": "35",
+        "nombre": "jugo nectar watts 1.5 lt durazno",
+        "categoria": "bebidas",
+        "precio": 1900,
+        "imagen": "/imagenesbotilleria/bebidas/watts-durazno.webp",
+        "stock": 3
+        },
+        {
+        "id": "36",
+        "nombre": "jugo nectar watts 1.5 lt naranja",
+        "categoria": "bebidas",
+        "precio": 1900,
+        "imagen": "/imagenesbotilleria/bebidas/watss-naranja.webp",
+        "stock": 3
+        },
+        {
+        "id": "37",
+        "nombre": "jugo nectar watts 1.5 lt tutti frutilla",
+        "categoria": "bebidas",
+        "precio": 1900,
+        "imagen": "/imagenesbotilleria/bebidas/watts-tuttifrutilla.jpg",
+        "stock": 3
+        },
+        {
+        "id": "38",
+        "nombre": "bebida 3 litros desechable limon soda",
+        "categoria": "bebidas",
+        "precio": 2500,
+        "imagen": "/imagenesbotilleria/bebidas/limon-soda-3lt.png",
+        "stock": 3
+        },
+        {
+        "id": "39",
+        "nombre": "bebida 3 litros desechable orange crush",
+        "categoria": "bebidas",
+        "precio": 2500,
+        "imagen": "/imagenesbotilleria/bebidas/orange-crush.png",
+        "stock": 3
+        },
+        {
+        "id": "40",
+        "nombre": "bebida 3 litros desechable kem",
+        "categoria": "bebidas",
+        "precio": 2500,
+        "imagen": "/imagenesbotilleria/bebidas/kem-3lt.webp",
+        "stock": 3
+        },
+        {
+        "id": "41",
+        "nombre": "bebida 3 litros desechable pap",
+        "categoria": "bebidas",
+        "precio": 2500,
+        "imagen": "/imagenesbotilleria/bebidas/pap-3lt.png",
+        "stock": 3
+        },
+        {
+        "id": "42",
+        "nombre": "bebida 3 litros desechable bilz",
+        "categoria": "bebidas",
+        "precio": 2500,
+        "imagen": "/imagenesbotilleria/bebidas/bilz-3lt.jpg",
+        "stock": 3
+        },
+        {
+        "id": "43",
+        "nombre": "bebida 3 litros desechable canada dry",
+        "categoria": "bebidas",
+        "precio": 2500,
+        "imagen": "/imagenesbotilleria/bebidas/canada-dry-3lt.png",
+        "stock": 3
+        },
+        {
+        "id": "44",
+        "nombre": "energetica redbull 250 ml",
+        "categoria": "bebidas",
+        "precio": 1700,
+        "imagen": "/imagenesbotilleria/bebidas/redbull.webp",
+        "stock": 3
+        },
+        {
+        "id": "45",
+        "nombre": "vino santa helena 2 lt blanco",
+        "categoria": "vinos",
+        "precio": 3800,
+        "imagen": "/imagenesbotilleria/vinos/vino-santa-helena-blanco.jpg",
+        "stock": 3
+        },
+        {
+        "id": "46",
+        "nombre": "vino santa helena 2 lt tinto",
+        "categoria": "vinos",
+        "precio": 3800,
+        "imagen": "/imagenesbotilleria/vinos/santa-helena-tinto.webp",
+        "stock": 3
+        },
+        {
+        "id": "47",
+        "nombre": "vino 120 2 litros tinto",
+        "categoria": "vinos",
+        "precio": 5500,
+        "imagen": "/imagenesbotilleria/vinos/vino-120-tinto.webp",
+        "stock": 3
+        },
+        {
+        "id": "48",
+        "nombre": "vino gato 2 litros canernet sauvignon",
+        "categoria": "vinos",
+        "precio": 5500,
+        "imagen": "/imagenesbotilleria/vinos/Vino-Gato-Cabernet-Sauvignon-Caja-2-L.webp",
+        "stock": 3
+        },
+        {
+        "id": "49",
+        "nombre": "vino bodega 2 litros tinto",
+        "categoria": "vinos",
+        "precio": 5000,
+        "imagen": "/imagenesbotilleria/vinos/bodega-uno-vino-tinto.webp",
+        "stock": 3
+        },
+        {
+        "id": "50",
+        "nombre": "vino bodega 2 litros blanco",
+        "categoria": "vinos",
+        "precio": 5000,
+        "imagen": "/imagenesbotilleria/vinos/bodega-uno-vino-blanco-2lt.png",
+        "stock": 3
+        },
+        {
+        "id": "51",
+        "nombre": "botellon gran 120 cabernet sauvignon 1.5 lt",
+        "categoria": "vinos",
+        "precio": 5000,
+        "imagen": "/imagenesbotilleria/vinos/120-cabernet-sauvignon-1.5lt.jpg",
+        "stock": 3
+        },
+        {
+        "id": "52",
+        "nombre": "undurraga pinot merlot 750 ml",
+        "categoria": "vinos",
+        "precio": 3700,
+        "imagen": "/imagenesbotilleria/vinos/undurraga-merlot.webp",
+        "stock": 3
+        },
+        {
+        "id": "53",
+        "nombre": "botellon exportacion selecto cabernet sauvignon 1.5 lt",
+        "categoria": "vinos",
+        "precio": 3700,
+        "imagen": "/imagenesbotilleria/vinos/exportacion-selecto-cabernet-sauvignon-1.5lt.webp",
+        "stock": 3
+        },
+        {
+        "id": "54",
+        "nombre": "botellon exportacion selecto merlot 1.5 lt",
+        "categoria": "vinos",
+        "precio": 3700,
+        "imagen": "/imagenesbotilleria/vinos/exportacion-selecto-cabernet-sauvignon-1.5lt.webp",
+        "stock": 3
+        },
+        {
+        "id": "55",
+        "nombre": "botellon clos de pirque cabernet sauvignon 1.5 lt",
+        "categoria": "vinos",
+        "precio": 3700,
+        "imagen": "/imagenesbotilleria/vinos/clos-de-pirque-vino-tinto-cabernet-sauvignon.webp",
+        "stock": 3
+        },
+        {
+        "id": "56",
+        "nombre": "botellon clos de pirque merlot 1.5 lt",
+        "categoria": "vinos",
+        "precio": 3700,
+        "imagen": "/imagenesbotilleria/vinos/clos-de-pirque-vino-tinto-merlot.webp",
+        "stock": 3
+        },
+        {
+        "id": "57",
+        "nombre": "vino bodega uno tinto 1 lt",
+        "categoria": "vinos",
+        "precio": 3000,
+        "imagen": "/imagenesbotilleria/vinos/vino-tinto-bodega-uno-1lt.webp",
+        "stock": 3
+        },
+        {
+        "id": "58",
+        "nombre": "vino bodega uno blanco 1 lt",
+        "categoria": "vinos",
+        "precio": 3000,
+        "imagen": "/imagenesbotilleria/vinos/vino-bodega-uno-blanco-1lt.webp",
+        "stock": 3
+        },
+        {
+        "id": "59",
+        "nombre": "vino santa helena tinto 1 lt",
+        "categoria": "vinos",
+        "precio": 3000,
+        "imagen": "/imagenesbotilleria/vinos/santa-helena-tinto.webp",
+        "stock": 3
+        },
+        {
+        "id": "60",
+        "nombre": "vino 120 tinto 1 lt",
+        "categoria": "vinos",
+        "precio": 3000,
+        "imagen": "/imagenesbotilleria/vinos/vino-120-tinto.webp",
+        "stock": 3
+        },
+        {
+        "id": "61",
+        "nombre": "vino 120 blanco 1 lt",
+        "categoria": "vinos",
+        "precio": 3000,
+        "imagen": "/imagenesbotilleria/vinos/vino-120 blanco-1-lt.webp",
+        "stock": 3
+        },
+        {
+        "id": "62",
+        "nombre": "vino clos de pirque tinto 1 lt",
+        "categoria": "vinos",
+        "precio": 3300,
+        "imagen": "/imagenesbotilleria/vinos/clos-de-pirque-vino-tinto-1lt.jpg",
+        "stock": 3
+        },
+        {
+        "id": "63",
+        "nombre": "vino gato tinto 1 lt",
+        "categoria": "vinos",
+        "precio": 3500,
+        "imagen": "/imagenesbotilleria/vinos/vino-gato-tinto-1-lt.webp",
+        "stock": 3
+        },
+        {
+        "id": "64",
+        "nombre": "vino gato merlot 1 lt",
+        "categoria": "vinos",
+        "precio": 3500,
+        "imagen": "/imagenesbotilleria/vinos/vino-gato-merlot-1lt.jpg",
+        "stock": 3
+        },
+        {
+        "id": "65",
+        "nombre": "vino gato blanco 1 lt",
+        "categoria": "vinos",
+        "precio": 3500,
+        "imagen": "/imagenesbotilleria/vinos/Vino-Gato-Blanco-Caja-1-L.webp",
+        "stock": 3
+        },
+        {
+        "id": "66",
+        "nombre": "vino bodega uno tinto 500cc",
+        "categoria": "vinos",
+        "precio": 1000,
+        "imagen": "/imagenesbotilleria/vinos/vino-bodega-uno-500cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "67",
+        "nombre": "vino bodega uno blanco 500cc",
+        "categoria": "vinos",
+        "precio": 1000,
+        "imagen": "/imagenesbotilleria/vinos/bodega-uno-vino-blanco-500cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "68",
+        "nombre": "vino santa helena tinto 500cc",
+        "categoria": "vinos",
+        "precio": 1000,
+        "imagen": "/imagenesbotilleria/vinos/santa-helena-tinto-500cc.jpg",
+        "stock": 3
+        },
+        {
+        "id": "69",
+        "nombre": "vino santa helena blanco 500cc",
+        "categoria": "vinos",
+        "precio": 1000,
+        "imagen": "/imagenesbotilleria/vinos/vino-santa-helena-blanco-500cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "70",
+        "nombre": "vino 120 tinto 500cc",
+        "categoria": "vinos",
+        "precio": 1000,
+        "imagen": "/imagenesbotilleria/vinos/120-tinto-500cc.jpg",
+        "stock": 3
+        },
+        {
+        "id": "71",
+        "nombre": "vino 120 blanco 500cc",
+        "categoria": "vinos",
+        "precio": 1000,
+        "imagen": "/imagenesbotilleria/vinos/blanco-120-500cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "72",
+        "nombre": "vino undurraga pinot cabernet sauvignon",
+        "categoria": "vinos",
+        "precio": 4000,
+        "imagen": "/imagenesbotilleria/vinos/undurraga-pinot-sauvignon-750cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "73",
+        "nombre": "martini rosso",
+        "categoria": "licores",
+        "precio": 5500,
+        "imagen": "/imagenesbotilleria/licores/martini-rosso.webp",
+        "stock": 3
+        },
+        {
+        "id": "74",
+        "nombre": "martini blanco",
+        "categoria": "licores",
+        "precio": 5500,
+        "imagen": "/imagenesbotilleria/licores/martini-blanco.webp",
+        "stock": 3
+        },
+        {
+        "id": "75",
+        "nombre": "cognac 3 palos 1 litro",
+        "categoria": "licores",
+        "precio": 5500,
+        "imagen": "/imagenesbotilleria/licores/cognac-tres-palos-1lt.webp",
+        "stock": 3
+        },
+        {
+        "id": "76",
+        "nombre": "capel mix toffee cream 700 ml",
+        "categoria": "licores",
+        "precio": 5100,
+        "imagen": "/imagenesbotilleria/licores/capel-mix-toffee-cream-700-ml.jpg",
+        "stock": 3
+        },
+        {
+        "id": "77",
+        "nombre": "aguardiente donihue 900cc",
+        "categoria": "licores",
+        "precio": 3600,
+        "imagen": "/imagenesbotilleria/licores/aguardiente-donihue-900cc.jpg",
+        "stock": 3
+        },
+        {
+        "id": "78",
+        "nombre": "santo mojito cocktail 750 cc",
+        "categoria": "licores",
+        "precio": 4600,
+        "imagen": "/imagenesbotilleria/licores/santo-mojito-cocktail-750-cc.avif",
+        "stock": 3
+        },
+        {
+        "id": "79",
+        "nombre": "santa margarita fresa coktail 750 cc",
+        "categoria": "licores",
+        "precio": 4600,
+        "imagen": "/imagenesbotilleria/licores/santa-margarita-fresa-coktail-750-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "80",
+        "nombre": "campanario pina colada 700 cc",
+        "categoria": "licores",
+        "precio": 5000,
+        "imagen": "/imagenesbotilleria/licores/campanario-pina-colada-700-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "81",
+        "nombre": "campanario chirimoya colada 700 cc",
+        "categoria": "licores",
+        "precio": 5000,
+        "imagen": "/imagenesbotilleria/licores/campanario-chirimoya-colada-700-cc.jpg",
+        "stock": 3
+        },
+        {
+        "id": "82",
+        "nombre": "campanario lucuma colada 700 cccampanario lucuma colada 700 cc",
+        "categoria": "licores",
+        "precio": 5000,
+        "imagen": "/imagenesbotilleria/licores/campanario-lucuma-colada-700-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "83",
+        "nombre": "campanario mango colado 700 cc",
+        "categoria": "licores",
+        "precio": 5000,
+        "imagen": "/imagenesbotilleria/licores/campanario-mango-colado-700-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "84",
+        "nombre": "tequila blanco sombrero negro 750 ml",
+        "categoria": "licores",
+        "precio": 14000,
+        "imagen": "/imagenesbotilleria/licores/tequila-blanco-sombrero-negro-750-ml.webp",
+        "stock": 3
+        },
+        {
+        "id": "85",
+        "nombre": "pisco mal paso 40 750 cc",
+        "categoria": "pisco",
+        "precio": 7200,
+        "imagen": "/imagenesbotilleria/piscos/pisco-mal-paso-40-750-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "86",
+        "nombre": "pisco mistral 35 1 litro",
+        "categoria": "pisco",
+        "precio": 10000,
+        "imagen": "/imagenesbotilleria/piscos/pisco-mistral-35-1-litro.webp",
+        "stock": 3
+        },
+        {
+        "id": "87",
+        "nombre": "pisco bauza 35 750 cc",
+        "categoria": "pisco",
+        "precio": 7000,
+        "imagen": "/imagenesbotilleria/piscos/pisco-bauza-35-750-cc.jpg",
+        "stock": 3
+        },
+        {
+        "id": "88",
+        "nombre": "pisco campanario mango 750 cc",
+        "categoria": "pisco",
+        "precio": 6000,
+        "imagen": "/imagenesbotilleria/piscos/pisco-campanario-mango-750-cc.jpeg",
+        "stock": 3
+        },
+        {
+        "id": "89",
+        "nombre": "pisco campanario sour 750 cc",
+        "categoria": "pisco",
+        "precio": 6000,
+        "imagen": "/imagenesbotilleria/piscos/pisco-campanario-sour-750-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "90",
+        "nombre": "pisco secreto peruano sour 1 litro",
+        "categoria": "pisco",
+        "precio": 4000,
+        "imagen": "/imagenesbotilleria/piscos/pisco-secreto-peruano-sour-1-litro.jpg",
+        "stock": 3
+        },
+        {
+        "id": "91",
+        "nombre": "pisco secreto peruano mango 1 litro",
+        "categoria": "pisco",
+        "precio": 4500,
+        "imagen": "/imagenesbotilleria/piscos/pisco-secreto-peruano-mango-1-litro.webp",
+        "stock": 3
+        },
+        {
+        "id": "92",
+        "nombre": "pisco capel especial 35 1 litro",
+        "categoria": "pisco",
+        "precio": 8000,
+        "imagen": "/imagenesbotilleria/piscos/pisco-capel-especial-35-1-litro.jpeg",
+        "stock": 3
+        },
+        {
+        "id": "93",
+        "nombre": "pisco capel sour 750 cc",
+        "categoria": "pisco",
+        "precio": 5000,
+        "imagen": "/imagenesbotilleria/piscos/pisco-capel-sour-750-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "94",
+        "nombre": "pisco capel mango 750 cc",
+        "categoria": "pisco",
+        "precio": 5000,
+        "imagen": "/imagenesbotilleria/piscos/pisco-capel-mango-750-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "95",
+        "nombre": "whisky red label 750 cc ",
+        "categoria": "whisky",
+        "precio": 10500,
+        "imagen": "/imagenesbotilleria/whisky/whisky-red-label-750-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "96",
+        "nombre": "whisky ballantines finest 1 litro",
+        "categoria": "whisky",
+        "precio": 12000,
+        "imagen": "/imagenesbotilleria/whisky/whisky-ballantines-finest-1-litro.jpeg",
+        "stock": 3
+        },
+        {
+        "id": "97",
+        "nombre": "whisky vat 69 750 cc",
+        "categoria": "whisky",
+        "precio": 8000,
+        "imagen": "/imagenesbotilleria/whisky/whisky-vat-69-750-cc.jpg",
+        "stock": 3
+        },
+        {
+        "id": "98",
+        "nombre": "whisky jack daniels honey 750 cc",
+        "categoria": "whisky",
+        "precio": 30000,
+        "imagen": "/imagenesbotilleria/whisky/whisky-jack-daniels-honey-750-cc.webp",
+        "stock": 3
+        },
+        {
+        "id": "99",
+        "nombre": "baileys original",
+        "categoria": "whisky",
+        "precio": 17000,
+        "imagen": "/imagenesbotilleria/whisky/baileys-original.webp",
+        "stock": 3
+        }
+    ]
+  }

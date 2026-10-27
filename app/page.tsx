@@ -54,7 +54,7 @@ export default function Home() {
                     </li>
 
                     <li className="nav-item">
-                        <a className="btn btn-success ms-5" href="/carrito.html"><strong><i className="bi bi-cart4"></i> Carrito <span className=""> <strong>$5.000</strong></span>
+                        <a className="btn btn-success ms-5" href="/pagina_prin_comprar"><strong><i className="bi bi-cart4"></i> Carrito <span className=""></span>
                         </strong></a>
                     </li>
                 </ul>

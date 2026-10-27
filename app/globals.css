@@ -1,4 +1,3 @@
-@import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -46,18 +45,18 @@ body {
 
 .precio-descuento {
   font-size: 0.9rem;
-  color: #6c757d; /* Color gris para el precio anterior */
+  color: #6c757d; 
 }
 .precio-nuevo {
-  color: #ff9900; /* Color destacado para el precio nuevo */
-  font-size: 1.4rem; /* Tamaño de fuente más grande para el precio nuevo */
+  color: #ff9900; 
+  font-size: 1.4rem; 
 }
 
 .card-producto {
-  transition: box-shadow 0.3s ease; /* Suaviza la transición de la sombra */
+  transition: box-shadow 0.3s ease; 
 }
 .card-producto:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   cursor: pointer;
 }
 
@@ -75,7 +74,10 @@ body {
 
 
 
-
+.Dashboard #sidebarMenu {
+  min-height: calc(100vh - 37px);
+  background-color: #f8f9fa;
+}
 .Dashboard a.nav-link.nav-menu.nav-active {
   background-color: #0d6efd; /* Color de fondo azul primario de Bootstrap */
   color: white !important;              /* Texto en blanco */
@@ -117,15 +119,15 @@ body {
 }
 
 .Dashboard .card-primary {
-  background-color: #0d6efd; /* Bootstrap primary color */
+  background-color: #0d6efd; 
 }
 
 .Dashboard .card-success {
-  background-color: #198754; /* Bootstrap success color */
+  background-color: #198754;
 }
 
 .Dashboard .card-warning {
-  background-color: #ffc107; /* Bootstrap warning color */
+  background-color: #ffc107; 
 }
 
 .Dashboard .card-icon {
@@ -135,9 +137,408 @@ body {
 
 
 .Dashboard .card-item {
-  transition: box-shadow 0.3s ease; /* Suaviza la transición de la sombra */
+  transition: box-shadow 0.3s ease; 
 }
 .Dashboard .card-item:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   cursor: pointer;
+}
+
+
+
+.Dashboard_Productos a.nav-link.nav-menu.nav-active {
+  background-color: #0d6efd; /* Color de fondo azul primario de Bootstrap */
+  color: white !important;              /* Texto en blanco */
+  border-radius: 50rem;       /* Bordes redondeados para darle forma de píldora */
+  padding: 0.375rem 0.75rem; /* Relleno consistente con los enlaces de Bootstrap */
+  display: inline-flex;      /* Asegurar alineación de ícono y texto */
+  align-items: center;
+  gap: 0.5rem;               /* Espaciado entre ícono y texto */
+  text-decoration: none;     /* Sin subrayado */
+  
+}
+
+.Dashboard_Productos a.nav-link.nav-menu {
+  color: #000000;
+}
+
+.Dashboard_Productos .bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.Dashboard_Productos .product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+.Comprar .nav-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.Comprar .nav-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Comprar .nav-card i {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.Comprar .nav-card a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+
+.Comprar .card {
+  background-color: #f8f9fa;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+.Comprar .card-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.Comprar .card-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+.Comprar .card-text {
+  font-family: 'Open Sans', sans-serif;
+  color: #495057;
+  line-height: 1.6;
+}
+
+.Comprar .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+.Comprar .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.Comprar .card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+
+
+.Dashboard,
+.Dashboard_Productos {
+  --admin-fondo: #0b0a09;
+  --admin-encabezado: #12110f;
+  --admin-sidebar: #11100e;
+  --admin-tarjeta: #191713;
+  --admin-tarjeta-hover: #25211b;
+  --admin-dorado: #ead38b;
+  --admin-dorado-claro: #f5df9b;
+  --admin-azul-petroleo: #173a45;
+  --admin-texto: #f7f7f7;
+  --admin-texto-secundario: #b9afa3;
+  --admin-borde: #b9a45f;
+
+  min-height: 100vh;
+  background-color: var(--admin-fondo);
+  color: var(--admin-texto);
+}
+
+
+.Dashboard main,
+.Dashboard_Productos main,
+.Dashboard > .container-fluid,
+.Dashboard_Productos > .container-fluid {
+  background-color: var(--admin-fondo) !important;
+  color: var(--admin-texto);
+}
+
+.Dashboard main.bg-light,
+.Dashboard main.bg-body-tertiary,
+.Dashboard_Productos main.bg-light,
+.Dashboard_Productos main.bg-body-tertiary {
+  background-color: var(--admin-fondo) !important;
+}
+
+
+.Dashboard .navbar,
+.Dashboard_Productos .navbar,
+.Dashboard .bg-dark,
+.Dashboard_Productos .bg-dark {
+  background-color: var(--admin-encabezado) !important;
+  color: var(--admin-texto) !important;
+  border-bottom: 1px solid #393329;
+}
+
+
+.Dashboard #sidebarMenu,
+.Dashboard_Productos #sidebarMenu {
+  min-height: calc(100vh - 37px);
+  background-color: var(--admin-sidebar) !important;
+  color: var(--admin-texto);
+  border-right: 1px solid #393329;
+}
+
+.Dashboard a.nav-link.nav-menu,
+.Dashboard_Productos a.nav-link.nav-menu {
+  color: var(--admin-texto-secundario) !important;
+}
+
+.Dashboard a.nav-link.nav-menu:hover,
+.Dashboard_Productos a.nav-link.nav-menu:hover {
+  background-color: var(--admin-tarjeta-hover);
+  color: var(--admin-dorado-claro) !important;
+  border-radius: 10px;
+}
+
+.Dashboard a.nav-link.nav-menu.nav-active,
+.Dashboard_Productos a.nav-link.nav-menu.nav-active {
+  background-color: var(--admin-azul-petroleo) !important;
+  color: var(--admin-dorado-claro) !important;
+}
+
+/* Íconos */
+.Dashboard .bi,
+.Dashboard_Productos .bi,
+.Dashboard .dashboard-icon,
+.Dashboard_Productos .dashboard-icon,
+.Dashboard .card-icon,
+.Dashboard_Productos .card-icon {
+  color: var(--admin-dorado);
+  fill: currentColor;
+}
+
+
+.Dashboard .card,
+.Dashboard_Productos .card,
+.Dashboard .dashboard-card,
+.Dashboard_Productos .dashboard-card,
+.Dashboard .card-item,
+.Dashboard_Productos .card-item,
+.Dashboard .card-primary,
+.Dashboard .card-success,
+.Dashboard .card-warning {
+  background-color: var(--admin-tarjeta) !important;
+  color: var(--admin-texto) !important;
+  border: 1px solid var(--admin-borde) !important;
+}
+
+.Dashboard .card:hover,
+.Dashboard_Productos .card:hover,
+.Dashboard .dashboard-card:hover,
+.Dashboard_Productos .dashboard-card:hover,
+.Dashboard .card-item:hover,
+.Dashboard_Productos .card-item:hover {
+  background-color: var(--admin-tarjeta-hover) !important;
+  box-shadow: 0 4px 12px rgba(234, 211, 139, 0.14);
+}
+
+.Dashboard .card-title,
+.Dashboard_Productos .card-title,
+.Dashboard h1,
+.Dashboard h2,
+.Dashboard h3,
+.Dashboard_Productos h1,
+.Dashboard_Productos h2,
+.Dashboard_Productos h3 {
+  color: var(--admin-dorado-claro);
+}
+
+.Dashboard .text-muted,
+.Dashboard_Productos .text-muted {
+  color: var(--admin-texto-secundario) !important;
+}
+
+
+.Dashboard_Productos .table {
+  --bs-table-color: var(--admin-texto);
+  --bs-table-bg: var(--admin-tarjeta);
+  --bs-table-border-color: #4a4336;
+  --bs-table-striped-color: var(--admin-texto);
+  --bs-table-striped-bg: #211e19;
+  --bs-table-hover-color: var(--admin-texto);
+  --bs-table-hover-bg: var(--admin-tarjeta-hover);
+  color: var(--admin-texto);
+  border-color: #4a4336;
+}
+
+.Dashboard_Productos .table thead th {
+  color: var(--admin-dorado-claro);
+  border-bottom-color: var(--admin-borde);
+}
+
+/* Botones principales */
+.Dashboard .btn-primary,
+.Dashboard_Productos .btn-primary {
+  background-color: var(--admin-dorado);
+  border-color: var(--admin-dorado);
+  color: #11100e;
+  font-weight: 600;
+}
+
+.Dashboard .btn-primary:hover,
+.Dashboard_Productos .btn-primary:hover {
+  background-color: var(--admin-dorado-claro);
+  border-color: var(--admin-dorado-claro);
+  color: #11100e;
+}
+
+/* Formularios del administrador */
+.Dashboard input,
+.Dashboard select,
+.Dashboard textarea,
+.Dashboard_Productos input,
+.Dashboard_Productos select,
+.Dashboard_Productos textarea {
+  background-color: var(--admin-tarjeta);
+  color: var(--admin-texto);
+  border-color: #62583f;
+}
+
+.Dashboard input:focus,
+.Dashboard select:focus,
+.Dashboard textarea:focus,
+.Dashboard_Productos input:focus,
+.Dashboard_Productos select:focus,
+.Dashboard_Productos textarea:focus {
+  background-color: var(--admin-tarjeta);
+  color: var(--admin-texto);
+  border-color: var(--admin-dorado);
+  box-shadow: 0 0 0 0.2rem rgba(234, 211, 139, 0.2);
+}
+
+
+.Dashboard .form-control,
+.Dashboard .form-select,
+.Dashboard input,
+.Dashboard select,
+.Dashboard textarea,
+.Dashboard_Productos .form-control,
+.Dashboard_Productos .form-select,
+.Dashboard_Productos input,
+.Dashboard_Productos select,
+.Dashboard_Productos textarea {
+  background-color: #12110f !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+  caret-color: var(--admin-dorado);
+  border: 1px solid #746744 !important;
+}
+
+/* Texto de ayuda que aparece dentro de los campos */
+.Dashboard input::placeholder,
+.Dashboard textarea::placeholder,
+.Dashboard_Productos input::placeholder,
+.Dashboard_Productos textarea::placeholder {
+  color: #aaa297 !important;
+  -webkit-text-fill-color: #aaa297;
+  opacity: 1;
+}
+
+/* Títulos de cada campo */
+.Dashboard label,
+.Dashboard_Productos label,
+.Dashboard .form-label,
+.Dashboard_Productos .form-label {
+  color: #f7f7f7 !important;
+  font-weight: 600;
+}
+
+
+.Dashboard .form-text,
+.Dashboard_Productos .form-text,
+.Dashboard .text-secondary,
+.Dashboard_Productos .text-secondary,
+.Dashboard small:not(.text-danger),
+.Dashboard_Productos small:not(.text-danger) {
+  color: #c8bfb1 !important;
+}
+
+
+.Dashboard select option,
+.Dashboard_Productos select option {
+  background-color: #12110f;
+  color: #ffffff;
+}
+
+
+.Dashboard input:disabled,
+.Dashboard input[readonly],
+.Dashboard select:disabled,
+.Dashboard textarea:disabled,
+.Dashboard_Productos input:disabled,
+.Dashboard_Productos input[readonly],
+.Dashboard_Productos select:disabled,
+.Dashboard_Productos textarea:disabled {
+  background-color: #29251f !important;
+  color: #d9d0c4 !important;
+  -webkit-text-fill-color: #d9d0c4;
+  opacity: 1;
+}
+
+
+.Dashboard input:-webkit-autofill,
+.Dashboard input:-webkit-autofill:hover,
+.Dashboard input:-webkit-autofill:focus,
+.Dashboard_Productos input:-webkit-autofill,
+.Dashboard_Productos input:-webkit-autofill:hover,
+.Dashboard_Productos input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 0 0 1000px #12110f inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+
+.Dashboard input[type="file"]::file-selector-button,
+.Dashboard_Productos input[type="file"]::file-selector-button {
+  background-color: var(--admin-dorado);
+  color: #11100e;
+  border: 0;
+  padding: 0.4rem 0.75rem;
+  margin-right: 0.75rem;
+  font-weight: 600;
+}
+
+.container-fluid > .row:has(#sidebarMenu) {
+  min-height: calc(100vh - 37px);
+  background-color: #11100e !important;
+}
+
+.container-fluid > .row:has(#sidebarMenu) main {
+  background-color: #0b0a09 !important;
+}
+
+#sidebarMenu {
+  background-color: #11100e !important;
+}
+
+.Dashboard aside.sidebar {
+  background-color: #11100e !important;
+  border-color: #393329 !important;
 }
