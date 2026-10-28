@@ -61,7 +61,7 @@ export default function Dashboard() {
   
                           <ul className="nav flex-column mb-auto">
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/perfil/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/perfil">
                                       <i className="bi bi-person-circle"></i>
                                       Perfil
                                   </a>
