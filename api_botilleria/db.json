@@ -1,166 +1,217 @@
-{"usuarios": [
+{
+  "categorias": [
     {
-        "id": "1",
-        "nombreCompleto": "Luna González",
-        "correo": "luna.gonzalez@example.com",
-        "telefono": "+56 9 1111 1001",
-        "tipo": "TRABAJADOR",
-        "rol": "ADMINISTRADOR",
-        "contrasena": "Admin123"
+      "id": "1",
+      "nombre": "Ron",
+      "cantidadProductos": 6,
+      "descripcion": "Productos pertenecientes a la categoría de ron"
     },
     {
-        "id": "2",
-        "nombreCompleto": "Pedro Ramírez",
-        "correo": "pedro.ramirez@example.com",
-        "telefono": "+56 9 1111 1002",
-        "tipo": "TRABAJADOR",
-        "rol": "VENDEDOR"
+      "id": "2",
+      "nombre": "Bebidas",
+      "cantidadProductos": 15,
+      "descripcion": "Bebidas sin alcohol y productos relacionados"
     },
     {
-        "id": "3",
-        "nombreCompleto": "Camila Soto",
-        "correo": "camila.soto@example.com",
-        "telefono": "+56 9 1111 1003",
-        "tipo": "TRABAJADOR",
-        "rol": "VENDEDOR"
+      "id": "3",
+      "nombre": "Whisky",
+      "cantidadProductos": 5,
+      "descripcion": "Productos pertenecientes a la categoría de whisky"
     },
     {
-        "id": "4",
-        "nombreCompleto": "Diego Morales",
-        "correo": "diego.morales@example.com",
-        "telefono": "+56 9 1111 1004",
-        "tipo": "TRABAJADOR",
-        "rol": "VENDEDOR"
+      "id": "4",
+      "nombre": "Cervezas",
+      "cantidadProductos": 18,
+      "descripcion": "Productos pertenecientes a la categoría de cervezas"
     },
     {
-        "id": "5",
-        "nombreCompleto": "Valentina Rojas",
-        "correo": "valentina.rojas@example.com",
-        "telefono": "+56 9 1111 1005",
-        "tipo": "TRABAJADOR",
-        "rol": "ADMINISTRADOR"
+      "id": "5",
+      "nombre": "Vodka",
+      "cantidadProductos": 5,
+      "descripcion": "Productos pertenecientes a la categoría de vodka"
     },
     {
-        "id": "6",
-        "nombreCompleto": "Sebastián Muñoz",
-        "correo": "sebastian.munoz@example.com",
-        "telefono": "+56 9 1111 1006",
-        "tipo": "TRABAJADOR",
-        "rol": "VENDEDOR"
+      "id": "6",
+      "nombre": "Vinos",
+      "cantidadProductos": 28,
+      "descripcion": "Productos pertenecientes a la categoría de vinos"
     },
     {
-        "id": "7",
-        "nombreCompleto": "Fernanda Silva",
-        "correo": "fernanda.silva@example.com",
-        "telefono": "+56 9 1111 1007",
-        "tipo": "TRABAJADOR",
-        "rol": "VENDEDOR"
+      "id": "7",
+      "nombre": "Pisco",
+      "cantidadProductos": 10,
+      "descripcion": "Productos pertenecientes a la categoría de pisco"
     },
     {
-        "id": "8",
-        "nombreCompleto": "Matías Contreras",
-        "correo": "matias.contreras@example.com",
-        "telefono": "+56 9 1111 1008",
-        "tipo": "TRABAJADOR",
-        "rol": "VENDEDOR"
-    },
-    {
-        "id": "9",
-        "nombreCompleto": "Daniela Pérez",
-        "correo": "daniela.perez@example.com",
-        "telefono": "+56 9 1111 1009",
-        "tipo": "TRABAJADOR",
-        "rol": "VENDEDOR"
-    },
-    {
-        "id": "10",
-        "nombreCompleto": "Nicolás Herrera",
-        "correo": "nicolas.herrera@example.com",
-        "telefono": "+56 9 1111 1010",
-        "tipo": "TRABAJADOR",
-        "rol": "VENDEDOR"
-    },
-    {
-        "id": "11",
-        "nombreCompleto": "Andrea González",
-        "correo": "andrea.gonzalez@example.com",
-        "telefono": "+56 9 2222 2001",
-        "tipo": "CLIENTE",
-        "rol": "CLIENTE"
-    },
-    {
-        "id": "12",
-        "nombreCompleto": "Javier Torres",
-        "correo": "javier.torres@example.com",
-        "telefono": "+56 9 2222 2002",
-        "tipo": "CLIENTE",
-        "rol": "CLIENTE"
-    },
-    {
-        "id": "13",
-        "nombreCompleto": "Francisca López",
-        "correo": "francisca.lopez@example.com",
-        "telefono": "+56 9 2222 2003",
-        "tipo": "CLIENTE",
-        "rol": "CLIENTE"
-    },
-    {
-        "id": "14",
-        "nombreCompleto": "Tomás Martínez",
-        "correo": "tomas.martinez@example.com",
-        "telefono": "+56 9 2222 2004",
-        "tipo": "CLIENTE",
-        "rol": "CLIENTE"
-    },
-    {
-        "id": "15",
-        "nombreCompleto": "Catalina Reyes",
-        "correo": "catalina.reyes@example.com",
-        "telefono": "+56 9 2222 2005",
-        "tipo": "CLIENTE",
-        "rol": "CLIENTE"
-    },
-    {
-        "id": "16",
-        "nombreCompleto": "Benjamín Castro",
-        "correo": "benjamin.castro@example.com",
-        "telefono": "+56 9 2222 2006",
-        "tipo": "CLIENTE",
-        "rol": "CLIENTE"
-    },
-    {
-        "id": "17",
-        "nombreCompleto": "Antonia Fuentes",
-        "correo": "antonia.fuentes@example.com",
-        "telefono": "+56 9 2222 2007",
-        "tipo": "CLIENTE",
-        "rol": "CLIENTE"
-    },
-    {
-        "id": "18",
-        "nombreCompleto": "Felipe Navarro",
-        "correo": "felipe.navarro@example.com",
-        "telefono": "+56 9 2222 2008",
-        "tipo": "CLIENTE",
-        "rol": "CLIENTE"
-    },
-    {
-        "id": "19",
-        "nombreCompleto": "Josefa Espinoza",
-        "correo": "josefa.espinoza@example.com",
-        "telefono": "+56 9 2222 2009",
-        "tipo": "CLIENTE",
-        "rol": "CLIENTE"
-    },
-    {
-        "id": "20",
-        "nombreCompleto": "Vicente Salazar",
-        "correo": "vicente.salazar@example.com",
-        "telefono": "+56 9 2222 2010",
-        "tipo": "CLIENTE",
-        "rol": "CLIENTE"
+      "id": "8",
+      "nombre": "Licores",
+      "cantidadProductos": 12,
+      "descripcion": "Productos pertenecientes a la categoría de licores"
     }
-    ],
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "nombreCompleto": "Luna González",
+      "correo": "luna.gonzalez@example.com",
+      "telefono": "+56 9 1111 1001",
+      "tipo": "TRABAJADOR",
+      "rol": "ADMINISTRADOR",
+      "contrasena": "Admin123"
+    },
+    {
+      "id": "2",
+      "nombreCompleto": "Pedro Ramírez",
+      "correo": "pedro.ramirez@example.com",
+      "telefono": "+56 9 1111 1002",
+      "tipo": "TRABAJADOR",
+      "rol": "VENDEDOR"
+    },
+    {
+      "id": "3",
+      "nombreCompleto": "Camila Soto",
+      "correo": "camila.soto@example.com",
+      "telefono": "+56 9 1111 1003",
+      "tipo": "TRABAJADOR",
+      "rol": "VENDEDOR"
+    },
+    {
+      "id": "4",
+      "nombreCompleto": "Diego Morales",
+      "correo": "diego.morales@example.com",
+      "telefono": "+56 9 1111 1004",
+      "tipo": "TRABAJADOR",
+      "rol": "VENDEDOR"
+    },
+    {
+      "id": "5",
+      "nombreCompleto": "Valentina Rojas",
+      "correo": "valentina.rojas@example.com",
+      "telefono": "+56 9 1111 1005",
+      "tipo": "TRABAJADOR",
+      "rol": "ADMINISTRADOR"
+    },
+    {
+      "id": "6",
+      "nombreCompleto": "Sebastián Muñoz",
+      "correo": "sebastian.munoz@example.com",
+      "telefono": "+56 9 1111 1006",
+      "tipo": "TRABAJADOR",
+      "rol": "VENDEDOR"
+    },
+    {
+      "id": "7",
+      "nombreCompleto": "Fernanda Silva",
+      "correo": "fernanda.silva@example.com",
+      "telefono": "+56 9 1111 1007",
+      "tipo": "TRABAJADOR",
+      "rol": "VENDEDOR"
+    },
+    {
+      "id": "8",
+      "nombreCompleto": "Matías Contreras",
+      "correo": "matias.contreras@example.com",
+      "telefono": "+56 9 1111 1008",
+      "tipo": "TRABAJADOR",
+      "rol": "VENDEDOR"
+    },
+    {
+      "id": "9",
+      "nombreCompleto": "Daniela Pérez",
+      "correo": "daniela.perez@example.com",
+      "telefono": "+56 9 1111 1009",
+      "tipo": "TRABAJADOR",
+      "rol": "VENDEDOR"
+    },
+    {
+      "id": "10",
+      "nombreCompleto": "Nicolás Herrera",
+      "correo": "nicolas.herrera@example.com",
+      "telefono": "+56 9 1111 1010",
+      "tipo": "TRABAJADOR",
+      "rol": "VENDEDOR"
+    },
+    {
+      "id": "11",
+      "nombreCompleto": "Andrea González",
+      "correo": "andrea.gonzalez@example.com",
+      "telefono": "+56 9 2222 2001",
+      "tipo": "CLIENTE",
+      "rol": "CLIENTE"
+    },
+    {
+      "id": "12",
+      "nombreCompleto": "Javier Torres",
+      "correo": "javier.torres@example.com",
+      "telefono": "+56 9 2222 2002",
+      "tipo": "CLIENTE",
+      "rol": "CLIENTE"
+    },
+    {
+      "id": "13",
+      "nombreCompleto": "Francisca López",
+      "correo": "francisca.lopez@example.com",
+      "telefono": "+56 9 2222 2003",
+      "tipo": "CLIENTE",
+      "rol": "CLIENTE"
+    },
+    {
+      "id": "14",
+      "nombreCompleto": "Tomás Martínez",
+      "correo": "tomas.martinez@example.com",
+      "telefono": "+56 9 2222 2004",
+      "tipo": "CLIENTE",
+      "rol": "CLIENTE"
+    },
+    {
+      "id": "15",
+      "nombreCompleto": "Catalina Reyes",
+      "correo": "catalina.reyes@example.com",
+      "telefono": "+56 9 2222 2005",
+      "tipo": "CLIENTE",
+      "rol": "CLIENTE"
+    },
+    {
+      "id": "16",
+      "nombreCompleto": "Benjamín Castro",
+      "correo": "benjamin.castro@example.com",
+      "telefono": "+56 9 2222 2006",
+      "tipo": "CLIENTE",
+      "rol": "CLIENTE"
+    },
+    {
+      "id": "17",
+      "nombreCompleto": "Antonia Fuentes",
+      "correo": "antonia.fuentes@example.com",
+      "telefono": "+56 9 2222 2007",
+      "tipo": "CLIENTE",
+      "rol": "CLIENTE"
+    },
+    {
+      "id": "18",
+      "nombreCompleto": "Felipe Navarro",
+      "correo": "felipe.navarro@example.com",
+      "telefono": "+56 9 2222 2008",
+      "tipo": "CLIENTE",
+      "rol": "CLIENTE"
+    },
+    {
+      "id": "19",
+      "nombreCompleto": "Josefa Espinoza",
+      "correo": "josefa.espinoza@example.com",
+      "telefono": "+56 9 2222 2009",
+      "tipo": "CLIENTE",
+      "rol": "CLIENTE"
+    },
+    {
+      "id": "20",
+      "nombreCompleto": "Vicente Salazar",
+      "correo": "vicente.salazar@example.com",
+      "telefono": "+56 9 2222 2010",
+      "tipo": "CLIENTE",
+      "rol": "CLIENTE"
+    }
+  ],
   "productos": [
     {
       "id": "1",
@@ -308,7 +359,7 @@
     },
     {
       "id": "19",
-      "nombre": "ron barcelo anejo 750 cc",
+      "nombre": "ron barcelo anejo 750cc",
       "categoria": "ron",
       "precio": 11000,
       "imagen": "/imagenesbotilleria/ron/ron-barcelo-anejo.jpeg",
@@ -364,7 +415,7 @@
     },
     {
       "id": "26",
-      "nombre": "spirit piña",
+      "nombre": "spirit pina",
       "categoria": "vodka",
       "precio": 2000,
       "imagen": "/imagenesbotilleria/vodka/spriti-pina.webp",
@@ -428,7 +479,7 @@
     },
     {
       "id": "34",
-      "nombre": "jugo nectar watts 1.5 lt piña",
+      "nombre": "jugo nectar watts 1.5 lt pina",
       "categoria": "bebidas",
       "precio": 1900,
       "imagen": "/imagenesbotilleria/bebidas/watts-pina.png",
@@ -772,7 +823,7 @@
     },
     {
       "id": "77",
-      "nombre": "aguardiente doñihue 900cc",
+      "nombre": "aguardiente donihue 900cc",
       "categoria": "licores",
       "precio": 3600,
       "imagen": "/imagenesbotilleria/licores/aguardiente-donihue-900cc.jpg",
@@ -796,7 +847,7 @@
     },
     {
       "id": "80",
-      "nombre": "campanario piña colada 700 cc",
+      "nombre": "campanario pina colada 700 cc",
       "categoria": "licores",
       "precio": 5000,
       "imagen": "/imagenesbotilleria/licores/campanario-pina-colada-700-cc.webp",
@@ -836,7 +887,7 @@
     },
     {
       "id": "85",
-      "nombre": "pisco mal paso 40° 750 cc",
+      "nombre": "pisco mal paso 40 750 cc",
       "categoria": "pisco",
       "precio": 7200,
       "imagen": "/imagenesbotilleria/piscos/pisco-mal-paso-40-750-cc.webp",
@@ -844,7 +895,7 @@
     },
     {
       "id": "86",
-      "nombre": "pisco mistral 35° 1 litro",
+      "nombre": "pisco mistral 35 1 litro",
       "categoria": "pisco",
       "precio": 10000,
       "imagen": "/imagenesbotilleria/piscos/pisco-mistral-35-1-litro.webp",
@@ -852,7 +903,7 @@
     },
     {
       "id": "87",
-      "nombre": "pisco bauza 35° 750 cc",
+      "nombre": "pisco bauza 35 750 cc",
       "categoria": "pisco",
       "precio": 7000,
       "imagen": "/imagenesbotilleria/piscos/pisco-bauza-35-750-cc.jpg",
@@ -892,7 +943,7 @@
     },
     {
       "id": "92",
-      "nombre": "pisco capel especial 35° 1 litro",
+      "nombre": "pisco capel especial 35 1 litro",
       "categoria": "pisco",
       "precio": 8000,
       "imagen": "/imagenesbotilleria/piscos/pisco-capel-especial-35-1-litro.jpeg",
@@ -944,7 +995,7 @@
       "categoria": "whisky",
       "precio": 30000,
       "imagen": "/imagenesbotilleria/whisky/whisky-jack-daniels-honey-750-cc.webp",
-      "stock": 100
+      "stock": 3
     },
     {
       "id": "99",
@@ -972,5 +1023,6 @@
       }
     ]
   }
-]
+],
+  "$schema": "./node_modules/json-server/schema.json"
 }

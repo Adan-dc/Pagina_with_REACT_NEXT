@@ -59,7 +59,35 @@ export default function DetalleProducto() {
             })
             .catch(() => setError("No se pudo cargar el producto."));
     }, []);
+    function agregarAlCarrito() {
+        if (!producto  || producto.stock <= 0) {
+            return;
+        }
 
+        const carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
+
+        const existente = carrito.find(
+            (item: { id: string; cantidad: number }) => item.id === producto.id
+        );
+
+        const cantidadActual = existente?.cantidad || 0;
+
+        if (cantidadActual >= producto.stock) {
+            alert(`Solo hay ${producto.stock} unidades disponibles.`);
+            return;
+        }
+
+        const nuevoCarrito = existente
+            ? carrito.map((item: { id: string; cantidad: number }) =>
+                item.id === producto.id
+                    ? { ...item, cantidad: item.cantidad + 1 }
+                    : item
+            )
+            : [...carrito, { ...producto, cantidad: 1 }];
+
+        localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+        window.dispatchEvent(new Event("carritoActualizado"));
+    }
     return (
         <main className="DetalleProducto">
             <Navbar />
@@ -149,21 +177,21 @@ export default function DetalleProducto() {
                                     </div>
 
                                     <div className="d-grid gap-2">
-                                        <button
-                                            type="button"
-                                            className="btn btn-primary btn-lg"
-                                            disabled
-                                        >
-                                            Agregar al carrito
-                                        </button>
+                                    <button
+                                        type="button"
+                                        className="btn btn-primary w-100"
+                                        onClick={agregarAlCarrito}
+                                        disabled={!producto || producto.stock === 0}
+                                    >
+                                        Agregar al carrito
+                                    </button>
 
-                                        <button
-                                            type="button"
-                                            className="btn btn-outline-primary"
-                                            disabled
+                                        <Link
+                                            href="/pagina_prin_comprar"
+                                            className="btn btn-outline-primary w-100"
                                         >
                                             Comprar ahora
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

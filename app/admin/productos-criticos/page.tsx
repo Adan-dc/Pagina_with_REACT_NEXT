@@ -74,7 +74,7 @@ export default function ProductosCriticos() {
                                             </li>
 
                                             <li className="nav-item mx-2">
-                                                <a href="/admin/productos-criticos" className="nav-link nav-menu d-flex gap-2">
+                                                <a href="/dashboard_productos" className="nav-link nav-menu d-flex gap-2">
                                                     <i className="bi bi-cart"></i>
                                                     Productos
                                                 </a>
@@ -88,14 +88,14 @@ export default function ProductosCriticos() {
                                             </li>
 
                                             <li className="nav-item mx-2">
-                                                <a href="/admin/usuarios/historial" className="nav-link nav-menu d-flex gap-2">
+                                                <a href="/dashboard_usuarios" className="nav-link nav-menu d-flex gap-2">
                                                     <i className="bi bi-people"></i>
                                                     Usuarios
                                                 </a>
                                             </li>
 
                                             <li className="nav-item mx-2">
-                                                <a href="/admin/productos-reporte" className="nav-link nav-menu d-flex gap-2">
+                                                <a href="/admin/reportes" className="nav-link nav-menu d-flex gap-2">
                                                     <i className="bi bi-graph-up"></i>
                                                     Reportes
                                                 </a>
@@ -138,43 +138,36 @@ export default function ProductosCriticos() {
                             <h4 className="card-title">Productos</h4>
                             <p className="card-text">Listado de productos</p>
 
-                            <ul className="nav nav-tabs">
-                                <li className="nav-item">
-                                    <span className="nav-link disabled">
-                                        Listado de productos
-                                    </span>
-                                </li>
+                            
+                                <ul className="nav nav-tabs">
+                                    <li className="nav-item">
+                                        <Link href="/dashboard_productos" className="nav-link">
+                                            Listado de productos
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link href="/admin/productos-criticos" className="nav-link active">
+                                            Productos Críticos
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link href="/admin/productos-reporte" className="nav-link">
+                                            Reportes de Productos
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link href="/dashboard_productos/nuevo" className="nav-link">
+                                            Nuevo producto
+                                        </Link>
+                                    </li>
 
-                                <li className="nav-item">
-                                    <Link
-                                        href="/admin/productos-criticos"
-                                        className="nav-link active"
-                                    >
-                                        Listado de productos críticos
-                                    </Link>
-                                </li>
+                                    <li className="nav-item">
+                                        <Link href="/dashboard_productos/editar" className="nav-link">
+                                            Editar Producto
+                                        </Link>
+                                    </li>
+                                </ul>
 
-                                <li className="nav-item">
-                                    <span className="nav-link disabled">
-                                        Formato tarjeta
-                                    </span>
-                                </li>
-
-                                <li className="nav-item">
-                                  <Link
-                                      href="/admin/productos-reporte"
-                                      className="nav-link"
-                                      >
-                                      Reportes
-                                  </Link>
-                                </li>
-
-                                <li className="nav-item">
-                                    <span className="nav-link disabled">
-                                        Nuevo producto
-                                    </span>
-                                </li>
-                            </ul>
 
                             <div className="card text-start">
                                 <div className="card-body">

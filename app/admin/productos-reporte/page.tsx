@@ -204,7 +204,7 @@ export default function ReporteProductos() {
                                         </li>
 
                                         <li className="nav-item mx-2">
-                                            <a href="/admin/productos-criticos" className="nav-link nav-menu d-flex gap-2">
+                                            <a href="/dashboard_productos" className="nav-link nav-menu d-flex gap-2">
                                                 <i className="bi bi-cart"></i>
                                                 Productos
                                             </a>
@@ -218,14 +218,14 @@ export default function ReporteProductos() {
                                         </li>
 
                                         <li className="nav-item mx-2">
-                                            <a href="/admin/usuarios/historial" className="nav-link nav-menu d-flex gap-2">
+                                            <a href="/dashboard_usuarios" className="nav-link nav-menu d-flex gap-2">
                                                 <i className="bi bi-people"></i>
                                                 Usuarios
                                             </a>
                                         </li>
 
                                         <li className="nav-item mx-2">
-                                            <a href="/admin/productos-reporte" className="nav-link nav-menu d-flex gap-2">
+                                            <a href="/admin/reportes" className="nav-link nav-menu d-flex gap-2">
                                                 <i className="bi bi-graph-up"></i>
                                                 Reportes
                                             </a>
@@ -273,45 +273,38 @@ export default function ReporteProductos() {
                                 Listado de productos
                             </p>
 
+                            
                             <ul className="nav nav-tabs">
                                 <li className="nav-item">
-                                    <span className="nav-link disabled">
+                                    <Link href="/dashboard_productos" className="nav-link">
                                         Listado de productos
-                                    </span>
+                                    </Link>
                                 </li>
-
                                 <li className="nav-item">
-                                    <Link
-                                        href="/admin/productos-criticos"
-                                        className="nav-link"
-                                    >
-                                        Listado de productos críticos
+                                    <Link href="/admin/productos-criticos" className="nav-link">
+                                        Productos Críticos
                                     </Link>
                                 </li>
 
                                 <li className="nav-item">
-                                    <span className="nav-link disabled">
-                                        Formato tarjeta
-                                    </span>
-                                </li>
-
-                                <li className="nav-item">
-                                    <Link
-                                        href="/admin/productos-reporte"
-                                        className="nav-link active"
-                                    >
-                                        Reportes
+                                    <Link href="/admin/productos-reporte" className="nav-link active">
+                                        Reportes de Productos
                                     </Link>
                                 </li>
-
                                 <li className="nav-item">
-                                    <span className="nav-link disabled">
+                                    <Link href="/dashboard_productos/nuevo" className="nav-link">
                                         Nuevo producto
-                                    </span>
+                                    </Link>
+                                </li>
+
+                                <li className="nav-item">
+                                    <Link href="/dashboard_productos/editar" className="nav-link">
+                                        Editar Producto
+                                    </Link>
                                 </li>
                             </ul>
-                        </div>
 
+                        </div>
                         {error && (
                             <div className="alert alert-danger mt-3">
                                 {error}

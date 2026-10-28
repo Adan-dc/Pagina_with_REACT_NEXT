@@ -1,15 +1,10 @@
 {
-  "name": "api_botilleria",
+  "name": "api_falsa",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "api": "json-server db.json --port 3001"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "json-server": "^1.0.0-beta.15"
   }

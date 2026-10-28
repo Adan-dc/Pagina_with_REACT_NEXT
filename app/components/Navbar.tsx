@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const enlaces = [
@@ -8,10 +11,39 @@ const enlaces = [
   { href: "/blog", texto: "Blog" },
   { href: "/contacto", texto: "Contacto" },
 ];
-
 export default function Navbar({ activo }: { activo?: string }) {
-  return (
-    <>
+    const [totalCarrito, setTotalCarrito] = useState(0);
+
+      useEffect(() => {
+          function actualizarCarrito() {
+              try {
+                  const carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
+
+                  const total = carrito.reduce(
+                      (suma: number, producto: { precio: number; cantidad: number }) =>
+                          suma + producto.precio * producto.cantidad,
+                      0
+                  );
+
+                  setTotalCarrito(total);
+              } catch {
+                  setTotalCarrito(0);
+              }
+          }
+
+          actualizarCarrito();
+
+          window.addEventListener("carritoActualizado", actualizarCarrito);
+          window.addEventListener("storage", actualizarCarrito);
+
+          return () => {
+              window.removeEventListener("carritoActualizado", actualizarCarrito);
+              window.removeEventListener("storage", actualizarCarrito);
+          };
+      }, []);
+
+    return (
+        <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <Link className="navbar-brand" href="/">
@@ -53,11 +85,12 @@ export default function Navbar({ activo }: { activo?: string }) {
                 </Link>
               </li>
             ))}
-            <li className="nav-item">
-              <a className="btn btn-success ms-3" href="/carrito.html">
-                <strong><i className="bi bi-cart4"></i> Carrito <span>$5.000</span></strong>
-              </a>
-            </li>
+            <Link href="/pagina_prin_comprar" className="btn btn-success ms-3">
+                <strong>
+                    <i className="bi bi-cart4"></i>{" "}
+                    Carrito ${totalCarrito.toLocaleString("es-CL")}
+                </strong>
+            </Link>
           </ul>
         </div>
       </nav>

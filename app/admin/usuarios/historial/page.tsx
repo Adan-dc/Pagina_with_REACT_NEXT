@@ -30,7 +30,15 @@ export default function HistorialCompras() {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:3001/usuarios/11")
+        const parametros = new URLSearchParams(window.location.search);
+        const id = parametros.get("id");
+
+        if (!id) {
+            setError("No se seleccionó ningún usuario");
+            return;
+        }
+
+        fetch(`http://localhost:3001/usuarios/${id}`)
             .then((respuesta) => respuesta.json())
             .then((datos) => setUsuario(datos))
             .catch(() => setError("No se pudo cargar el usuario"));
@@ -41,7 +49,9 @@ export default function HistorialCompras() {
             .catch(() => setError("No se pudieron cargar las órdenes"));
     }, []);
 
-    const historial = ordenes;
+    const historial = ordenes.filter(
+    (orden) => orden.usuarioId === usuario?.id
+    );
 
     return (
         <div className="Dashboard">
@@ -76,7 +86,7 @@ export default function HistorialCompras() {
                                         </li>
 
                                         <li className="nav-item mx-2">
-                                            <a href="/admin/productos-criticos" className="nav-link nav-menu d-flex gap-2">
+                                            <a href="/dashboard_productos" className="nav-link nav-menu d-flex gap-2">
                                                 <i className="bi bi-cart"></i>
                                                 Productos
                                             </a>
@@ -90,14 +100,14 @@ export default function HistorialCompras() {
                                         </li>
 
                                         <li className="nav-item mx-2">
-                                            <a href="/admin/usuarios/historial" className="nav-link nav-menu d-flex gap-2">
+                                            <a href="/dashboard_usuarios" className="nav-link nav-menu d-flex gap-2">
                                                 <i className="bi bi-people"></i>
                                                 Usuarios
                                             </a>
                                         </li>
 
                                         <li className="nav-item mx-2">
-                                            <a href="/admin/productos-reporte" className="nav-link nav-menu d-flex gap-2">
+                                            <a href="/admin/reporte" className="nav-link nav-menu d-flex gap-2">
                                                 <i className="bi bi-graph-up"></i>
                                                 Reportes
                                             </a>

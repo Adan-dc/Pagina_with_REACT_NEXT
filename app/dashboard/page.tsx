@@ -3,7 +3,7 @@ export default function Dashboard() {
       <div className="Dashboard">
         <header className="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
           <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="/dashboard">
-            Botillería J&C
+            Botilleria J&C
           </a>
         </header>
   
@@ -13,7 +13,7 @@ export default function Dashboard() {
                   <div className="offcanvas-md offcanvas-start bg-body-tertiary" tabIndex={-1} id="sidebarMenu"
                       aria-labelledby="sidebarMenuLabel">
                       <div className="offcanvas-header">
-                          <h5 className="offcanvas-title" id="sidebarMenuLabel">Botillería J&C</h5>
+                          <h5 className="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
                           <button type="button" className="btn-close" data-bs-dismiss="offcanvas"
                               data-bs-target="#sidebarMenu" aria-label="Close"></button>
                       </div>
@@ -32,25 +32,25 @@ export default function Dashboard() {
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/productos-criticos">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/dashboard_productos">
                                       <i className="bi bi-cart"></i>
                                       Productos
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/categoria/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/dashboard_categoria">
                                       <i className="bi bi-list-ul"></i>
                                       Categorías
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/usuarios/historial">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/dashboard_usuarios">
                                       <i className="bi bi-people"></i>
                                       Usuarios
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/reporte/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/reportes">
                                       <i className="bi bi-graph-up"></i>
                                       Reportes
                                   </a>
