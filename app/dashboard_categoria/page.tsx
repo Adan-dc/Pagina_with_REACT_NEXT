@@ -28,7 +28,7 @@ export default function Dashboard_Categoria() {
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/dashboard_productos">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/ordenes">
                                       <i className="bi bi-file-earmark"></i>
                                       Ordenes
                                   </a>
@@ -52,7 +52,7 @@ export default function Dashboard_Categoria() {
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/reporte/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/reportes">
                                       <i className="bi bi-graph-up"></i>
                                       Reportes
                                   </a>
@@ -63,7 +63,7 @@ export default function Dashboard_Categoria() {
   
                           <ul className="nav flex-column mb-auto">
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/perfil/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/perfil">
                                       <i className="bi bi-person-circle"></i>
                                       Perfil
                                   </a>

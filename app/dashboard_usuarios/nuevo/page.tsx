@@ -31,7 +31,7 @@ export default function Dashboard_Usuario_Nuevo() {
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/dashboard_productos">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/ordenes">
                                       <i className="bi bi-file-earmark"></i>
                                       Ordenes
                                   </a>
@@ -49,13 +49,13 @@ export default function Dashboard_Usuario_Nuevo() {
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2 nav-active" href="/admin/usuario/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2 nav-active" href="/dashboard_usuarios">
                                       <i className="bi bi-people"></i>
                                       Usuarios
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/reporte/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/reportes">
                                       <i className="bi bi-graph-up"></i>
                                       Reportes
                                   </a>
@@ -66,7 +66,7 @@ export default function Dashboard_Usuario_Nuevo() {
   
                           <ul className="nav flex-column mb-auto">
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/perfil/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/perfil">
                                       <i className="bi bi-person-circle"></i>
                                       Perfil
                                   </a>
@@ -179,11 +179,27 @@ export default function Dashboard_Usuario_Nuevo() {
                                     <div className="mb-3 col-6 col-md-6">
                                         <label htmlFor="regionSelect" className="form-label">Región<small className="text-danger">*</small></label>
                                         <select className="form-select" id="regionSelect" required>
+                                        <option value="" disabled>Seleccione una Region</option>
+                                            <option value="Cervezas">Metropolitana</option>
+                                            <option value="Ron">Valparaiso</option>
+                                            <option value="Vodka">O'Higgins</option>
                                         </select>
                                     </div>
                                     <div className="mb-3 col-6 col-md-6">
                                         <label htmlFor="comunaSelect" className="form-label">Comuna<small className="text-danger">*</small></label>
-                                        <select className="form-select" id="comunaSelect" required>
+                                        <select className="form-select" id="comunaSelect" defaultValue="" required>
+                                            <option value="" disabled>Seleccione una Comuna</option>
+                                            <option value="Maipu">Maipu</option>
+                                            <option value="Cerrillos">Cerrillos</option>
+                                            <option value="Santiago">Santiago</option>
+                                            <option value="Cerro navia">Cerro Navia</option>
+                                            <option value="Valparaiso">Valparaiso</option>
+                                            <option value="Viña del mar">Viña del mar</option>
+                                            <option value="Casa Blanca">Casa Blanca</option>
+                                            <option value="Concón">Concón</option>
+                                            <option value="Graneros">Graneros</option>
+                                            <option value="Malloa">Malloa</option>
+                                            <option value="Pengo">Pengo</option>
                                         </select>
                                     </div>
 
@@ -210,6 +226,6 @@ export default function Dashboard_Usuario_Nuevo() {
 
   function handleGuardar(evento: FormEvent<HTMLFormElement>) {
     evento.preventDefault();
-    alert("Se ha creado correctamente el producto");
+    alert("Se ha creado correctamente el Usuario");
   }
   

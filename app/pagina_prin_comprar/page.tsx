@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { calcularTotal } from "@/utils/funcionesTienda";
-
+import Navbar from "../components/Navbar";
 interface Producto {
     id: string;
     nombre: string;
@@ -75,13 +75,10 @@ export default function Carrito() {
         }, []);
       
         function guardarCarrito(nuevoCarrito: ProductoCarrito[]) {
-          setCarrito(nuevoCarrito);
-          localStorage.setItem(
-            "carrito",
-            JSON.stringify(nuevoCarrito)
-          );
+            setCarrito(nuevoCarrito);
+            localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+            window.dispatchEvent(new Event("carritoActualizado"));
         }
-      
         function agregarAlCarrito(producto: Producto) {
           const productoExistente = carrito.find(
             (item) => item.id === producto.id
@@ -160,69 +157,7 @@ export default function Carrito() {
       
     return (
       <main>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-            <div className="container-fluid">
-                <a className="navbar-brand" href="/">
-                    <img src="https://via.placeholder.com/40" alt="Logo" className="d-inline-block align-text-top"/>
-                </a>
-                <div className="collapse navbar-collapse justify-content-center" id="navbarTopContent">
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"/>
-                        <button className="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
-                </div>
-                <div className="d-flex">
-                    <a href="/iniciar-sesion.html" className="btn btn-outline-primary ms-2">Iniciar Sesión</a>
-                    <a href="/crear-sesion.html" className="btn btn-primary ms-2">Crear Cuenta</a>
-                    <button className="btn btn-primary d-lg-none ms-2" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasMobileMenu" aria-controls="offcanvasMobileMenu">
-                        <span className="navbar-toggler-icon text-white"></span>
-                    </button>
-                </div>
-            </div>
-        </nav>
-
-        <nav className="navbar navbar-expand-lg bg-body-tertiary d-none d-lg-block">
-            <div className="container-fluid">
-                <div className="collapse navbar-collapse justify-content-center" id="navbarBottomContent">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a className="nav-link" href="/">Home</a>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="/#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Categorías
-                            </a>
-                            <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="/categorias.html">Acción</a></li>
-                                <li><a className="dropdown-item" href="/categorias.html">Aventura</a></li>
-                                <li><a className="dropdown-item" href="/categorias.html">Estrategia</a></li>
-                            </ul>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/ofertas.html">Ofertas</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/nosotros.html">Nosotros</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/blog.html">Blog</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/contacto.html">Contacto</a>
-                        </li>
-
-                        <li className="nav-item">
-                            <a className="btn btn-success ms-5" href="/carrito.html"><strong><i className="bi bi-cart4"></i> Carrito
-                                    <strong><span>{formatearPrecio(totalCarrito)}</span></strong>
-                                </strong></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+        <Navbar />
         <div className="offcanvas offcanvas-start" tabIndex={-1} id="offcanvasMobileMenu"
             aria-labelledby="offcanvasMobileMenuLabel">
             <div className="offcanvas-header">

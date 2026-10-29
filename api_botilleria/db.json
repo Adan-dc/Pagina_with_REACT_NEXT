@@ -56,7 +56,8 @@
       "correo": "luna.gonzalez@example.com",
       "telefono": "+56 9 1111 1001",
       "tipo": "TRABAJADOR",
-      "rol": "ADMINISTRADOR"
+      "rol": "ADMINISTRADOR",
+      "contrasena": "Admin123"
     },
     {
       "id": "2",
@@ -72,7 +73,16 @@
       "correo": "camila.soto@example.com",
       "telefono": "+56 9 1111 1003",
       "tipo": "TRABAJADOR",
-      "rol": "VENDEDOR"
+      "rol": "VENDEDOR",
+      "run": "",
+      "nombre": "Camila",
+      "apellidos": "Soto",
+      "fechaNacimiento": "",
+      "calle": "",
+      "departamento": "",
+      "region": "",
+      "comuna": "",
+      "indicaciones": ""
     },
     {
       "id": "4",
@@ -1003,6 +1013,24 @@
       "precio": 17000,
       "imagen": "/imagenesbotilleria/whisky/baileys-original.webp",
       "stock": 3
+    }
+  ],
+  "ordenes": [
+    {
+      "id": "1",
+      "codigo": "ORD-001",
+      "fecha": "2026-10-26",
+      "cliente": "Cliente de prueba",
+      "direccion": "Dirección de prueba",
+      "comuna": "Maipú",
+      "productos": [
+        {
+          "id": "30",
+          "nombre": "Bebida de prueba",
+          "cantidad": 2,
+          "precio": 2500
+        }
+      ]
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { filtrarProductosPorCategoria } from "@/utils/funcionesTienda";
-
+import Link from "next/link";
 interface Producto {
     id: string;
     nombre: string;
@@ -101,7 +101,7 @@ export default function Dashboard_Productos() {
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/dashboard_productos">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/ordenes">
                                       <i className="bi bi-file-earmark"></i>
                                       Ordenes
                                   </a>
@@ -125,7 +125,7 @@ export default function Dashboard_Productos() {
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/reporte/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/reportes">
                                       <i className="bi bi-graph-up"></i>
                                       Reportes
                                   </a>
@@ -172,6 +172,22 @@ export default function Dashboard_Productos() {
                         <li className="nav-item">
                             <a className="nav-link nav-menu active" aria-current="page" href="/dashboard_productos">Listado de productos</a>
                         </li>
+                        <li className="nav-item">
+                        <Link
+                            href="/admin/productos-criticos"
+                            className="nav-link"
+                        >
+                            Productos Críticos
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link
+                            href="/admin/productos-reporte"
+                            className="nav-link"
+                        >
+                            Reportes de Productos
+                        </Link>
+                    </li>
                         <li className="nav-item">
                             <a className="nav-link nav-menu" href="/dashboard_productos/nuevo">Nuevo producto</a>
                         </li>

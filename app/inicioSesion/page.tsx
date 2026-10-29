@@ -1,73 +1,176 @@
+
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+
+type Usuario = {
+    id: string;
+    nombreCompleto: string;
+    correo: string;
+    tipo: string;
+    rol: string;
+    contrasena: string;
+};
+
 export default function IniciarSesion() {
+    const router = useRouter();
+
+    const [correo, setCorreo] = useState("");
+    const [contrasena, setContrasena] = useState("");
+    const [error, setError] = useState("");
+    const [cargando, setCargando] = useState(false);
+
+    async function ingresar(evento: React.FormEvent<HTMLFormElement>) {
+        evento.preventDefault();
+        setError("");
+        setCargando(true);
+
+        try {
+            const respuesta = await fetch("http://localhost:3001/usuarios");
+
+            if (!respuesta.ok) {
+                throw new Error("Error al consultar usuarios");
+            }
+
+            const usuarios: Usuario[] = await respuesta.json();
+
+            const usuario = usuarios.find(
+                (item) =>
+                    item.correo.toLowerCase() === correo.trim().toLowerCase() &&
+                    item.contrasena === contrasena
+            );
+
+            if (!usuario) {
+                setError("Correo o contraseña incorrectos.");
+                return;
+            }
+
+            if (usuario.rol === "ADMINISTRADOR") {
+                router.push("/dashboard");
+            } else if (usuario.rol === "CLIENTE") {
+                router.push("/");
+            } else {
+                setError("Este usuario no tiene acceso al administrador.");
+            }
+
+        } catch {
+            setError("No se pudo conectar con la API.");
+        } finally {
+            setCargando(false);
+        }
+    }
+
     return (
-      <main>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-            <div className="container-fluid">
-                <a className="navbar-brand" href="/">
-                    <img src="https://via.placeholder.com/40" alt="Logo" className="d-inline-block align-text-top"/>
-                </a>
-                <div className="collapse navbar-collapse justify-content-center" id="navbarTopContent">
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"/>
-                        <button className="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
-                </div>
-                <div className="d-flex">
-                    <a href="/iniciar-sesion.html" className="btn btn-outline-primary ms-2">Iniciar Sesión</a>
-                    <a href="/crear-sesion.html" className="btn btn-primary ms-2">Crear Cuenta</a>
-                </div>
-            </div>
-        </nav>
-        <div className="container mt-5">
-            <div className="row">
-                <div className="card">
-                    <div className="card-body row">
+        <main className="InicioSesion">
+            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                <div className="container-fluid">
+                    <Link href="/" className="navbar-brand fw-bold">
+                        Botillería J&C
+                    </Link>
 
-                        <div className="col-md-6 d-none d-md-block">
-                            <img src="https://via.placeholder.com/600x400" className="product-img" alt="Producto"/>
-                        </div>
-                        <div className="col-md-6">
-                            <h2 className="mb-4 text-center">Iniciar Sesión</h2>
-                            <div id="error" hidden className="alert alert-danger alert-dismissible fade show" role="alert">
-                                <strong>¡Error!</strong> Usuarios o Contraseña mal ingresados.
-                                <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div className="d-flex">
+                        <Link href="/" className="btn btn-outline-primary">
+                            Volver a la tienda
+                        </Link>
+                    </div>
+                </div>
+            </nav>
+
+            <div className="container mt-5 pb-5">
+                <div className="row justify-content-center">
+                    <div className="col-lg-9">
+                        <div className="card shadow-sm">
+                            <div className="card-body row p-4">
+
+                                <div className="col-md-6 d-none d-md-flex align-items-center justify-content-center">
+                                    <div className="text-center">
+                                        <h3 className="fw-bold mb-3">
+                                            Bienvenido a J&C
+                                        </h3>
+                                        <p className="text-muted">
+                                            Ingresa con tu cuenta para acceder
+                                            a las funciones correspondientes.
+                                        </p>
+                                        <div className="display-1">
+                                            🛒
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="col-md-6">
+                                    <h2 className="mb-4 text-center">
+                                        Iniciar Sesión
+                                    </h2>
+
+                                    {error && (
+                                        <div className="alert alert-danger" role="alert">
+                                            {error}
+                                        </div>
+                                    )}
+
+                                    <form onSubmit={ingresar}>
+                                        <div className="mb-3">
+                                            <label
+                                                htmlFor="correo"
+                                                className="form-label"
+                                            >
+                                                Correo electrónico
+                                            </label>
+
+                                            <input
+                                                type="email"
+                                                className="form-control"
+                                                id="correo"
+                                                placeholder="Ingresa tu correo"
+                                                value={correo}
+                                                onChange={(evento) =>
+                                                    setCorreo(evento.target.value)
+                                                }
+                                                required
+                                            />
+                                        </div>
+
+                                        <div className="mb-3">
+                                            <label
+                                                htmlFor="contrasena"
+                                                className="form-label"
+                                            >
+                                                Contraseña
+                                            </label>
+
+                                            <input
+                                                type="password"
+                                                className="form-control"
+                                                id="contrasena"
+                                                placeholder="Ingresa tu contraseña"
+                                                value={contrasena}
+                                                onChange={(evento) =>
+                                                    setContrasena(evento.target.value)
+                                                }
+                                                required
+                                            />
+                                        </div>
+                                        <button
+                                            type="submit"
+                                            className="btn btn-primary w-100"
+                                            disabled={cargando}
+                                        >
+                                            <strong>
+                                                {cargando
+                                                    ? "VERIFICANDO..."
+                                                    : "INICIAR SESIÓN"}
+                                            </strong>
+                                        </button>
+                                    </form>
+                                </div>
+
                             </div>
-                            <form id="loginForm">
-                                <div className="mb-3">
-                                    <label htmlFor="username" className="form-label">Usuario</label>
-                                    <input type="text" className="form-control" id="username" required/>
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="password" className="form-label">Contraseña</label>
-                                    <input type="password" className="form-control" id="password" required/>
-                                </div>
-                                <div className="mb-3">
-                                    <a href="/crear-sesion.html">¿No tienes cuenta? Regístrate aquí</a>
-                                    <a href="/recuperar-contrasena.html" className="float-end">¿Olvidaste tu contraseña?</a>
-                                </div>
-
-                                <button type="submit" className="btn btn-primary w-100"><strong>INICIAR SESIÓN</strong></button>
-                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-6">
-                    <div className="card mt-3 text-center bg-info">
-                        <div className="card-body">
-                            <h5 className="card-title">Acceso directo</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="/cliente/index.html" className="btn btn-danger"><strong>ENTRAR COMO CLIENTE</strong></a>
-                            <a href="/dashboard" className="btn btn-dark"><strong>ENTRAR COMO ADMINISTRADOR</strong></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </main>
-    )
-  }
+        </main>
+    );
+}

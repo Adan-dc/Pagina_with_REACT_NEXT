@@ -86,7 +86,7 @@ export default function Dashboard_Usuario() {
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/dashboard_productos">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/ordenes">
                                       <i className="bi bi-file-earmark"></i>
                                       Ordenes
                                   </a>
@@ -110,7 +110,7 @@ export default function Dashboard_Usuario() {
                                   </a>
                               </li>
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/reporte/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/reportes">
                                       <i className="bi bi-graph-up"></i>
                                       Reportes
                                   </a>
@@ -121,7 +121,7 @@ export default function Dashboard_Usuario() {
   
                           <ul className="nav flex-column mb-auto">
                               <li className="nav-item mx-2">
-                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/perfil/index.html">
+                                  <a className="nav-link nav-menu d-flex gap-2" href="/admin/perfil">
                                       <i className="bi bi-person-circle"></i>
                                       Perfil
                                   </a>
@@ -153,7 +153,6 @@ export default function Dashboard_Usuario() {
                 <div className="mt-4">
                     <h4 className="card-title">Usuarios</h4>
                     <p className="card-text">Listado de trabajadores</p>
-                    <h2>Section title</h2>
                     <ul className="nav nav-tabs">
                         <li className="nav-item">
                             <a className="nav-link nav-menu active" aria-current="page" href="/dashboard_usuarios">Listado de trabajadores</a>
@@ -166,6 +165,9 @@ export default function Dashboard_Usuario() {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link nav-menu" href="/dashboard_usuarios/nuevo_admin">Nuevo usuario ADMIN</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link nav-menu" href="/dashboard_usuarios/editar">Editar usuarios</a>
                         </li>
                     </ul>
                     <div className="row mt-3 mb-3">
