@@ -1,0 +1,14 @@
+export default {
+  spec_dir: "spec",
+
+  spec_files: [
+    "**/*[sS]pec.ts"
+  ],
+
+  helpers: [],
+
+  env: {
+    stopSpecOnExpectationFailure: false,
+    random: false
+  }
+};

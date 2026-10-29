@@ -1,592 +1,130 @@
+
+"use client";
+import Navbar from "./components/Navbar";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Footer from "./components/Footer";
+type Producto = {
+    id: string;
+    nombre: string;
+    categoria: string;
+    precio: number;
+    imagen: string;
+    stock: number;
+};
+
 export default function Home() {
-  return (
-    <main>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-            <a className="navbar-brand" href="/">
-                <img src="https://via.placeholder.com/40" alt="Logo" className="d-inline-block align-text-top"/>
-            </a>
-            <div className="collapse navbar-collapse justify-content-center" id="navbarTopContent">
-                <form className="d-flex" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"/>
-                    <button className="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
-            </div>
-            <div className="d-flex">
-                <a href="/inicioSesion" className="btn btn-outline-primary ms-2">Iniciar Sesión</a>
-                <a href="/crear-sesion.html" className="btn btn-primary ms-2">Crear Cuenta</a>
-                <button className="btn btn-primary d-lg-none ms-2" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasMobileMenu" aria-controls="offcanvasMobileMenu">
-                    <span className="navbar-toggler-icon text-white"></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-    <nav className="navbar navbar-expand-lg bg-body-tertiary d-none d-lg-block">
-        <div className="container-fluid">
-            <div className="collapse navbar-collapse justify-content-center" id="navbarBottomContent">
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <a className="nav-link active" href="/"><strong>Home</strong></a>
-                    </li>
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="/#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Categorías
-                        </a>
-                        <ul className="dropdown-menu">
-                            <li><a className="dropdown-item" href="/categorias.html">Acción</a></li>
-                            <li><a className="dropdown-item" href="/categorias.html">Aventura</a></li>
-                            <li><a className="dropdown-item" href="/categorias.html">Estrategia</a></li>
-                        </ul>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/ofertas.html">Ofertas</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/nosotros.html">Nosotros</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/blog.html">Blog</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/contacto.html">Contacto</a>
-                    </li>
+    const [productos, setProductos] = useState<Producto[]>([]);
+    const [error, setError] = useState("");
+    const [busqueda, setBusqueda] = useState("");
+    useEffect(() => {
+        const parametros = new URLSearchParams(window.location.search);
+        setBusqueda(parametros.get("buscar") || "");
+        fetch("http://localhost:3001/productos")
+            .then((respuesta) => {
+                if (!respuesta.ok) {
+                    throw new Error("Error al cargar productos");
+                }
+                return respuesta.json();
+            })
+            .then((datos) => setProductos(datos))
+            .catch(() => setError("No se pudieron cargar los productos"));
+    }, []);
 
-                    <li className="nav-item">
-                        <a className="btn btn-success ms-5" href="/carrito.html"><strong><i className="bi bi-cart4"></i> Carrito <span className=""> <strong>$5.000</strong></span>
-                        </strong></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div className="">
-        <div className="d-md-none">
-            <div id="carouselMobile" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselMobile" data-bs-slide-to="0" className="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselMobile" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselMobile" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src="https://via.placeholder.com/900x500" className="d-block w-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Nuevos Lanzamientos</h5>
-                            <p>Descubre los últimos juegos disponibles en nuestra tienda.</p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img src="https://via.placeholder.com/900x500" className="d-block w-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Ofertas Especiales</h5>
-                            <p>Aprovecha nuestros descuentos exclusivos.</p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img src="https://via.placeholder.com/900x500" className="d-block w-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Juegos Más Vendidos</h5>
-                            <p>Explora los títulos más populares entre nuestros clientes.</p>
-                        </div>
-                    </div>
-                </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselMobile"
-                    data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Anterior</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselMobile"
-                    data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Siguiente</span>
-                </button>
-            </div>
-        </div>
+    const categorias = [
+        ...new Set(productos.map((producto) => producto.categoria))
+    ];
+    const productosFiltrados = productos.filter((producto) =>
+        producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
+    );
+    return (
+        <main className="TiendaInicio">
+            <Navbar activo="/" />
+            <section className="container-fluid bg-dark text-white text-center py-5">
+                <div className="container">
+                    <h1>Botillería J&C</h1>
+                    <p className="lead">
+                        Bienvenidos a nuestra tienda
+                    </p>
 
-        <div className="d-none d-md-block">
-            <div id="carouselWeb" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselWeb" data-bs-slide-to="0" className="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselWeb" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselWeb" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+                    <a href="#productos" className="btn btn-light">
+                        Ver productos
+                    </a>
                 </div>
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src="https://via.placeholder.com/1200x300" className="d-block w-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Nuevos Lanzamientos</h5>
-                            <p>Descubre los últimos juegos disponibles en nuestra tienda.</p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img src="https://via.placeholder.com/1200x300" className="d-block w-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Ofertas Especiales</h5>
-                            <p>Aprovecha nuestros descuentos exclusivos.</p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img src="https://via.placeholder.com/1200x300" className="d-block w-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Juegos Más Vendidos</h5>
-                            <p>Explora los títulos más populares entre nuestros clientes.</p>
-                        </div>
-                    </div>
-                </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselWeb" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Anterior</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselWeb" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Siguiente</span>
-                </button>
-            </div>
-        </div>
-    </div>
-    <div className="container">
-            <h2 className="text-center mb-4">Categorías</h2>
-            <div className="row">
-                <div className="col-md-4">
-                    <div className="card">
-                        <img src="https://via.placeholder.com/400x200" className="card-img-top" alt="Acción"/>
-                        <div className="card-body">
-                            <h5 className="card-title">Acción</h5>
-                            <p className="card-text">Juegos llenos de adrenalina y emoción.</p>
-                            <a href="/categorias.html" className="btn btn-primary">Explorar</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className="card">
-                        <img src="https://via.placeholder.com/400x200" className="card-img-top" alt="Aventura"/>
-                        <div className="card-body">
-                            <h5 className="card-title">Aventura</h5>
-                            <p className="card-text">Explora mundos fascinantes y vive historias épicas.</p>
-                            <a href="/categorias.html" className="btn btn-primary">Explorar</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className="card">
-                        <img src="https://via.placeholder.com/400x200" className="card-img-top" alt="Estrategia"/>
-                        <div className="card-body">
-                            <h5 className="card-title">Estrategia</h5>
-                            <p className="card-text">Desafía tu mente con estos juegos estratégicos.</p>
-                            <a href="/categorias.html" className="btn btn-primary">Explorar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </section>
+            <section id="productos" className="py-5 bg-light">
+                <div className="container">
+                    <h2 className="text-center mb-4">
+                        Productos
+                    </h2>
 
+                    {error && (
+                        <div className="alert alert-danger">
+                            {error}
+                        </div>
+                    )}
 
-        <div className="container">
-            <h2 className="text-center mb-4">Productos</h2>
-            <div className="row row-cols-2 row-cols-md-6 g-3 mb-3">
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/productos/producto1.html" className="link-none">
-                                <p className="card-title">Producto 1</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through"></span>
-                                <span className="precio-nuevo fw-bolder">$ 13.450</span>
-                            </div>
-                            <div className="d-grid">
-                                <a className="btn btn-dark" href="/productos/producto1.html">Ver</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/productos/producto1.html" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <a className="btn btn-dark" href="/productos/producto1.html">Ver</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/productos/producto1.html" className="link-none">
-                                <p className="card-title">Producto 20</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 7.500</span>
-                                <span className="precio-nuevo fw-bolder">$ 6.000</span>
-                            </div>
-                            <div className="d-grid">
-                                <a className="btn btn-dark" href="/productos/producto1.html">Ver</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/productos/producto1.html" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <a className="btn btn-dark" href="/productos/producto1.html">Ver</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/productos/producto1.html" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <a className="btn btn-dark" href="/productos/producto1.html">Ver</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/productos/producto1.html" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <a className="btn btn-dark" href="/productos/producto1.html">Ver</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div className="row row-cols-2 row-cols-md-6 g-3 mb-3">
-                
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-primary" type="button">Ver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-primary" type="button">Ver</button>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-primary" type="button">Ver</button>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-primary" type="button">Ver</button>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-primary" type="button">Ver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-primary" type="button">Ver</button>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    {!error && productos.length === 0 && (
+                        <p className="text-center">
+                            Cargando productos...
+                        </p>
+                    )}
 
-            <h2 className="text-center mb-4">Los más vistos</h2>
-            
-            <div className="row row-cols-2 row-cols-md-4 g-4">
-                
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-primary" type="button">Ver</button>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-primary" type="button">Ver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-primary" type="button">Ver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-primary" type="button">Ver</button>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-        
-          
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-dark" type="button">Ver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-dark" type="button">Ver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-dark" type="button">Ver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card card-producto">
-                        <img src="https://via.placeholder.com/400x300" className="card-img-top" alt="Producto 3"/>
-                        <div className="card-body">
-                            <a href="/" className="link-none">
-                                <p className="card-title">Producto 3</p>
-                            </a>
-                            <div className="d-flex flex-column mb-3">
-                                <span className="precio-descuento text-decoration-line-through">$ 10.000</span>
-                                <span className="precio-nuevo fw-bolder">$ 7.999</span>
-                            </div>
-                            <div className="d-grid">
-                                <button className="btn btn-dark" type="button">Ver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    {[...new Set(productosFiltrados.map((producto) => producto.categoria))].map((categoria) => (
+                        <div
+                            id={categoria}
+                            className="mb-5"
+                            key={categoria}
+                        >
+                            <h3 className="text-capitalize mb-3">
+                                {categoria}
+                            </h3>
 
+                            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+                                {productosFiltrados
+                                        .filter((producto) => producto.categoria === categoria)
+                                    .map((producto) => (
+                                        <div className="col" key={producto.id}>
+                                            <div className="card card-producto h-100">
+                                                <Link href={`/detalleProducto?id=${producto.id}`}>
+                                                        <img
+                                                            src={producto.imagen}
+                                                            className="card-img-top imagen-catalogo"
+                                                            alt={producto.nombre}
+                                                        />
+                                                    </Link>
 
-        <div className="container">
-            <h2 className="text-center mb-4">Contacto</h2>
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <form>
-                        <div className="mb-3">
-                            <label htmlFor="nombre" className="form-label">Nombre</label>
-                            <input type="text" className="form-control" id="nombre" placeholder="Tu nombre"/>
+                                                <div className="card-body d-flex flex-column">
+                                                    <p className="text-muted small">
+                                                        BOTILLERÍA J&C
+                                                    </p>
+
+                                                    <Link
+                                                        href={`/detalleProducto?id=${producto.id}`}
+                                                        className="text-decoration-none"
+                                                    >
+                                                        <h5 className="card-title text-capitalize">
+                                                            {producto.nombre}
+                                                        </h5>
+                                                    </Link>
+
+                                                    <p className="precio-nuevo fw-bold mt-auto">
+                                                        ${producto.precio.toLocaleString("es-CL")}
+                                                    </p>
+
+                                                    <p className="small">
+                                                        Stock: {producto.stock}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                            </div>
                         </div>
-                        <div className="mb-3">
-                            <label htmlFor="email" className="form-label">Email</label>
-                            <input type="email" className="form-control" id="email" placeholder="Tu correo electrónico"/>
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="mensaje" className="form-label">Mensaje</label>
-                            <textarea className="form-control" id="mensaje" rows={3} placeholder="Tu mensaje"></textarea>
-                        </div>
-                        <button type="submit" className="btn btn-primary">Enviar</button>
-                    </form>
+                    ))}
                 </div>
-            </div>
-        </div>
-
-        <footer className="bg-dark text-light text-center py-3">
-        {/* Mapa responsivo */}
-        <div className="container-fluid">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d795.8652023171296!2d-70.6151711566251!3d-33.4328796238235!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c586497835ad%3A0xa929ba68e1ac6051!2sDuoc%20UC%20Casa%20Central!5e1!3m2!1ses!2scl!4v1722850059541!5m2!1ses!2scl"
-            width="100%"
-            height={300}
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-
-        <p>&copy; 2030 Tienda de Videojuegos</p>
-      </footer>
-    </main>
-  )
+            </section>
+            <Footer />
+        </main>
+    );
 }
